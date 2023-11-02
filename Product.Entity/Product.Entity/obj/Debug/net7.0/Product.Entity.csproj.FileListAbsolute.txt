@@ -1,0 +1,11 @@
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\bin\Debug\net7.0\Product.Entity.deps.json
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\bin\Debug\net7.0\Product.Entity.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\bin\Debug\net7.0\Product.Entity.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.AssemblyInfoInputs.cache
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.AssemblyInfo.cs
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.csproj.CoreCompileInputs.cache
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\refint\Product.Entity.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\Product.Entity.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Entity\Product.Entity\obj\Debug\net7.0\ref\Product.Entity.dll

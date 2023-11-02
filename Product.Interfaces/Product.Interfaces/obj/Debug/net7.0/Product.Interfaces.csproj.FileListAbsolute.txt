@@ -1,0 +1,15 @@
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\bin\Debug\net7.0\Product.Interfaces.deps.json
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\bin\Debug\net7.0\Product.Interfaces.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\bin\Debug\net7.0\Product.Interfaces.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\bin\Debug\net7.0\Product.Entity.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\bin\Debug\net7.0\Product.Entity.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.csproj.AssemblyReference.cache
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.AssemblyInfoInputs.cache
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.AssemblyInfo.cs
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.csproj.CopyComplete
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\refint\Product.Interfaces.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\Product.Interfaces.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Interfaces\Product.Interfaces\obj\Debug\net7.0\ref\Product.Interfaces.dll
