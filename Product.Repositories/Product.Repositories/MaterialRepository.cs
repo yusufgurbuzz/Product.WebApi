@@ -34,13 +34,5 @@ public class MaterialRepository: RepositoryBase<Material>, IMaterialRepository
         Delete(material);
     }
 
-    public void StockAmountIncrease(int id, int stockAmount, DateTime LastInTime, bool trackChanges)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void StockAmountDecrease(int id, int stockAmount, DateTime LastOutTime, bool trackChanges)
-    {
-        throw new NotImplementedException();
-    }
+   
 }
