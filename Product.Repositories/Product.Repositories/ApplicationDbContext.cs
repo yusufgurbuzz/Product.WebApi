@@ -11,9 +11,9 @@ public class ApplicationDbContext : DbContext
         
     }
 
-    public DbSet<Material> Materials { get; set; }
-    //public DbSet<Product_Material> Products_Materials { get; set; }
+    public DbSet<Material> Materials { get; set; } 
+    public DbSet<ProductMaterial> Products_Materials { get; set; }
     public DbSet<Entity.Product> Products { get; set; }
-    public DbSet<Stock> Stocks { get; set; }
+    public DbSet<ProductionRecord> ProductionRecord { get; set; }
 
 }

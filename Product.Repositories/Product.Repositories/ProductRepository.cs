@@ -1,4 +1,5 @@
-﻿using Product.Interfaces;
+﻿using Product.Entity;
+using Product.Interfaces;
 
 namespace Product.Repositories;
 
@@ -13,7 +14,7 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
         return FindAll(trackChanges);
     }
 
-    public Entity.Product GetOneProduct(int id, bool trackChanges)
+    public Entity.Product GetProductById(int id, bool trackChanges)
     {
         return FindByCondition(b => b.ProductId.Equals(id), trackChanges).SingleOrDefault();
     }
@@ -31,5 +32,12 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
     public void DeleteOneProduct(Entity.Product product)
     {
         Delete(product);
+    }
+
+    public List<ProductMaterial> GetProductMaterialByProductId(int productId)
+    {
+        return _context.Products_Materials
+            .Where(pm => pm.ProductId == productId)
+            .ToList();
     }
 }

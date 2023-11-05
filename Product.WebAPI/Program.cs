@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
-builder.Services.AddControllers().AddNewtonsoftJson();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

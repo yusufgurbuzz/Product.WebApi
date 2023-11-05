@@ -23,7 +23,7 @@ public class ProductController : Controller
     [HttpGet("{id:int}")]
     public IActionResult GetOneProduct(int id)
     {
-        var products = _serviceManager.ProductService.GetOneProduct(id,false);
+        var products = _serviceManager.ProductService.GetProductById(id,false);
         if (products is null)
         {
             return NotFound();

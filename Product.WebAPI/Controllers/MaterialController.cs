@@ -22,9 +22,9 @@ public class MaterialController : Controller
     }
     
     [HttpGet("{id:int}")]
-    public IActionResult GetOneMaterials(int id)
+    public IActionResult GetOneMaterial(int id)
     {
-        var material = _serviceManager.MaterialService.GetAllMaterial(false);
+        var material = _serviceManager.MaterialService.GetMaterialById(id,false);
         if (material is null)
         {
             return NotFound();

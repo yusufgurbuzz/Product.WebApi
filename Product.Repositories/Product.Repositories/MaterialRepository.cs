@@ -14,7 +14,7 @@ public class MaterialRepository: RepositoryBase<Material>, IMaterialRepository
         return FindAll(trackChanges);
     }
 
-    public Material GetOneMaterial(int id, bool trackChanges)
+    public Material GetMaterialById(int id, bool trackChanges)
     {
         return FindByCondition(b => b.MaterialId.Equals(id), trackChanges).SingleOrDefault();
     }

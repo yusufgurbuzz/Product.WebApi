@@ -1,9 +1,12 @@
-﻿namespace Product.Interfaces;
+﻿using Product.Repositories;
+
+namespace Product.Interfaces;
 
 public interface IRepositoryManager
 {
     IProductRepository ProductRepository { get; }
     IMaterialRepository MaterialRepository { get; }
-    IStockRepository StockRepository { get; }
+    IProductMaterialRepository ProductMaterialRepository { get; }
+    IProductionRecordRepository ProductionRecordRepository  { get; }
     void Save();
 }

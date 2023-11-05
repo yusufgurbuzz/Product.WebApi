@@ -18,9 +18,9 @@ public class ProductService : IProductService
         return _repositoryManager.ProductRepository.GetAllProduct(trackChanges);//repo
     }
 
-    public Entity.Product GetOneProduct(int id, bool trackChanges)
+    public Entity.Product GetProductById(int id, bool trackChanges)
     {
-        return _repositoryManager.ProductRepository.GetOneProduct(id, trackChanges);
+        return _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
     }
 
     public void CreateOneProduct(Entity.Product product)
@@ -37,7 +37,7 @@ public class ProductService : IProductService
 
     public void UpdateOneProduct(int id,Entity.Product product, bool tranckChanges)
     {
-        var entity = _repositoryManager.ProductRepository.GetOneProduct(id, tranckChanges);
+        var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
         if (entity is null)
         {
             throw new Exception($"Product with id : {id} could not found");
@@ -50,6 +50,7 @@ public class ProductService : IProductService
 
         entity.ProductId = product.ProductId;
         entity.ProductName = product.ProductName;
+        entity.ProductStock = product.ProductStock;
         
         _repositoryManager.ProductRepository.UpdateOneProduct(entity);
         _repositoryManager.Save();
@@ -58,7 +59,7 @@ public class ProductService : IProductService
 
     public void DeleteOneProduct(int id,bool trackChanges)
     {
-        var entity = _repositoryManager.ProductRepository.GetOneProduct(id, trackChanges);
+        var entity = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
         if (entity is null)
         {
             throw new Exception($"Product with id : {id} could not found");
