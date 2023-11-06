@@ -14,7 +14,7 @@ public class ProductRecordService : IProductionRecordService
     }
 
 
-    public string ProduceProduct(int productId, int quantity)
+    public void ProduceProduct(int productId, int quantity)
     {
         bool trackChanges = false;
         var product = _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
@@ -65,6 +65,6 @@ public class ProductRecordService : IProductionRecordService
             product.ProductStock += quantity;
             _repositoryManager.ProductRepository.UpdateOneProduct(product);
             _repositoryManager.Save();
-            return "";
+         
     }
 }

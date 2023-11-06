@@ -11,4 +11,8 @@
       <ProjectReference Include="..\..\Product.Repositories\Product.Repositories\Product.Repositories.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="StackExchange.Redis" Version="2.7.4" />
+    </ItemGroup>
+
 </Project>

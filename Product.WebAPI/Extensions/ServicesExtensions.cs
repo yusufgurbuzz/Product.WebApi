@@ -20,6 +20,8 @@ public static class ServicesExtensions
     public static void ConfigureServiceManager(this IServiceCollection services)
     {
         services.AddScoped<IServiceManager,ServiceManager>();
+        services.AddScoped<ICacheService, CacheService>();
     }
+    
 
 }

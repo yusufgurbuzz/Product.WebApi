@@ -6,4 +6,5 @@ public interface IServiceManager
     IMaterialService MaterialService { get; }
     IProductMaterialService ProductMaterialService { get; }
    IProductionRecordService ProductionRecordService  { get; }
+   
 }

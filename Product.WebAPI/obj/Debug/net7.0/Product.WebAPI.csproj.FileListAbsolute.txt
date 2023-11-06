@@ -53,3 +53,5 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\bin\Debug\net7.0\StackExchange.Redis.dll

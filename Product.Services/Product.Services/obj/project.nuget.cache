@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BQA22URsKiM0wIrQUwzNXLEok5MdqEHpytv2nR9UYqWNpWYx2mFtdbfDzhjIXbUGWub0YDVnFD1ly7/VaiiHwA==",
+  "dgSpecHash": "p6taNzlCFi+dhUpRV3Y+iLADeVQdJ4kR/sROEXh2cELhjM0vqJ6uA+36D78j8wAQ+eB4qJA3pM/et5R8Mftd2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\yusuf.gurbuz\\Desktop\\ProductWebApiProject\\WebAppProject\\Product.Services\\Product.Services\\Product.Services.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,10 @@
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
-    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512"
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\stackexchange.redis\\2.7.4\\stackexchange.redis.2.7.4.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

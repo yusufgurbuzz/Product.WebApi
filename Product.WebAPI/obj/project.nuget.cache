@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2ES4L9g9zYS32zRrvSsxY8EUVpUsCNFx0898b9uv8vlqe7btNbUua58162WA8ztQayicubWjoPe6ppiAVvCzBw==",
+  "dgSpecHash": "o8j4O3SqmcMbVIZBCewnKkIzNiFkAn1On6Xijl6rEULSFvDxue8r6MSdfFQQD+OneUqC5XsulNYwwUfvQ97iBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\yusuf.gurbuz\\Desktop\\ProductWebApiProject\\WebAppProject\\Product.WebAPI\\Product.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -32,11 +32,14 @@
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\stackexchange.redis\\2.7.4\\stackexchange.redis.2.7.4.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

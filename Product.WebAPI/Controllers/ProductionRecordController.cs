@@ -19,7 +19,7 @@ public class ProductionRecordController : Controller
     {
         try
         {
-            var result = _serviceManager.ProductionRecordService.ProduceProduct(productId, quantity);
+             _serviceManager.ProductionRecordService.ProduceProduct(productId, quantity);
             return Ok();
         }
         catch (Exception ex)
