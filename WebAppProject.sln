@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Repositories", "Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Services", "Product.Services\Product.Services\Product.Services.csproj", "{C7952121-0012-402A-956F-5DED55820B07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draft.Product.WebAPI", "Draft.Product.WebAPI\Draft.Product.WebAPI\Draft.Product.WebAPI.csproj", "{CC72410A-DECC-4F41-919E-DC095E15EE7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{C7952121-0012-402A-956F-5DED55820B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7952121-0012-402A-956F-5DED55820B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7952121-0012-402A-956F-5DED55820B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC72410A-DECC-4F41-919E-DC095E15EE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC72410A-DECC-4F41-919E-DC095E15EE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC72410A-DECC-4F41-919E-DC095E15EE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC72410A-DECC-4F41-919E-DC095E15EE7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

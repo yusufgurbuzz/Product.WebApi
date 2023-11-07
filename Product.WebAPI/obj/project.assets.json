@@ -671,6 +671,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
           "Product.Interfaces": "1.0.0",
           "Product.Repositories": "1.0.0",
           "StackExchange.Redis": "2.7.4"

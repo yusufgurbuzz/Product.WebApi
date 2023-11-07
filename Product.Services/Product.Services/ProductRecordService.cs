@@ -1,30 +1,36 @@
-﻿using Product.Entity;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using Newtonsoft.Json;
+using Product.Entity;
 using Product.Interfaces;
+using StackExchange.Redis;
 using Product.Repositories;
+using IDatabase = StackExchange.Redis.IDatabase;
+
 
 namespace Product.Services;
 
 public class ProductRecordService : IProductionRecordService
 {
     private readonly IRepositoryManager _repositoryManager;
-    
-    public ProductRecordService(IRepositoryManager repositoryManager)
+    private readonly ICacheService _cacheService;
+   
+    public ProductRecordService(IRepositoryManager repositoryManager,ICacheService cacheService)
     {
         _repositoryManager = repositoryManager;
+        _cacheService = cacheService;
     }
-
-
-    public void ProduceProduct(int productId, int quantity)
+    
+    public void ProduceProduct(int productId, int quantity) //üretim kısmı
     {
         bool trackChanges = false;
         var product = _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
-
+    
         if (product == null)
         {
             throw new Exception("Product not found");
         }
         var productMaterials = _repositoryManager.ProductMaterialRepository.GetProductMaterialsByProductId(productId);
-
+    
         if (productMaterials.Count < 3)
         {
             throw new Exception("At least 3 materials are required to produce the product");
@@ -34,17 +40,17 @@ public class ProductRecordService : IProductionRecordService
             var material =
                 _repositoryManager.MaterialRepository.GetMaterialById(productMaterial.MaterialId, trackChanges);
               
-
+    
             if (material == null)
             {
                 throw new Exception("Material Not Found !");
             }
-
+    
             if (material.MaterialUnit < quantity * productMaterial.Quantity)
             {
                 throw new Exception($"Insufficient material stock {material.MaterialUnit}");
             }
-
+    
             // Malzeme stokunu güncelleme
             material.MaterialUnit -= quantity * productMaterial.Quantity;
             _repositoryManager.MaterialRepository.UpdateOneMaterial(material);
@@ -67,4 +73,5 @@ public class ProductRecordService : IProductionRecordService
             _repositoryManager.Save();
          
     }
+    
 }

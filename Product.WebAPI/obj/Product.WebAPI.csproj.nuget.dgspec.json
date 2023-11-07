@@ -225,6 +225,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.7.4, )"

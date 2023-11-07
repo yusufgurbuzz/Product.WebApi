@@ -21,6 +21,8 @@ public static class ServicesExtensions
     {
         services.AddScoped<IServiceManager,ServiceManager>();
         services.AddScoped<ICacheService, CacheService>();
+        
+       
     }
     
 

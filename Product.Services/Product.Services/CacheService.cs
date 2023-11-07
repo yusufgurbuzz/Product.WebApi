@@ -42,8 +42,8 @@ public class CacheService : ICacheService
 
     public bool SetData<T>(string key, T value, DateTimeOffset expirationTime)
     {
-        var expirtyTime = expirationTime.DateTime.Subtract(DateTime.Now);
-        return  _cacheDb.StringSet(key,JsonSerializer.Serialize(value),expirtyTime); 
+        var expirtyTime = expirationTime - DateTimeOffset.Now;
+        return _cacheDb.StringSet(key, JsonSerializer.Serialize(value), expirtyTime);
         //Redis önbellekte verinin saklanacağı anahtar (key) değerini temsil eder.
         //value değişkenini JSON formatına dönüştürerek önbelleğe saklar.
         //Bu, önbellekte saklanan verinin serileştirilmiş (JSON formatında) bir sürümünü temsil eder.
@@ -60,4 +60,20 @@ public class CacheService : ICacheService
 
         return false;
     }
+    
+
+    public IEnumerable<string> GetAllKeysTitle(string title)
+    {
+        var keys = new List<string>();
+
+        var server = _cacheDb.Multiplexer.GetServer(_cacheDb.Multiplexer.GetEndPoints()[0]); 
+
+        foreach (var key in server.Keys(pattern: $"{title}*"))
+        {
+            keys.Add(key);
+        }
+
+        return keys;
+    }
+
 }

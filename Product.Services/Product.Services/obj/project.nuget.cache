@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p6taNzlCFi+dhUpRV3Y+iLADeVQdJ4kR/sROEXh2cELhjM0vqJ6uA+36D78j8wAQ+eB4qJA3pM/et5R8Mftd2w==",
+  "dgSpecHash": "gB5KtCTARsBomlk6uR/KGgZTNED7nsOFwgyXrtE6C+Y0tXGUAfVX/rrn8B8RZClavimQRAu3WHcqH3FKGLteJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\yusuf.gurbuz\\Desktop\\ProductWebApiProject\\WebAppProject\\Product.Services\\Product.Services\\Product.Services.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\yusuf.gurbuz\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
