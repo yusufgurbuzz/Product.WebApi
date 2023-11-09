@@ -12,7 +12,6 @@ public class DraftProduceProductController : Controller
     private readonly IServiceManager _serviceManager;
     private readonly ICacheService _cacheService;
     private readonly IProductMaterialRecordService _productMaterialRecordService;
-    private readonly IConnectionMultiplexer _connectionMultiplexer;
     
     public DraftProduceProductController(IServiceManager serviceManager,ICacheService cacheService,
         IProductMaterialRecordService productMaterialRecordService,IConnectionMultiplexer connectionMultiplexer)
@@ -20,13 +19,14 @@ public class DraftProduceProductController : Controller
         _serviceManager = serviceManager;
         _cacheService = cacheService;
         _productMaterialRecordService = productMaterialRecordService;
-        _connectionMultiplexer = connectionMultiplexer;
+        
     }
 
-    [HttpPost("start")]
-    public IActionResult StartProduction(int productId, int quantity)
+    [HttpPost("productionRequest")]
+    public IActionResult ProductProductionRequest(int productId, int quantity)
     {
-        //Ürün üretim talebi verilerini productionData'ya doldurun.ProductMaterialMap,ProductionMaterial ile map edildi.
+       
+        //Ürün üretim talebi verilerini productionData'ya doldurdum.ProductMaterialMap,ProductionMaterial ile map edildi.
         var productionData = new ProductMaterialMap
         {
             ProductId = productId,
@@ -37,10 +37,11 @@ public class DraftProduceProductController : Controller
         var expiryTime = DateTimeOffset.Now.AddMinutes(10);
       var result =   _cacheService.SetData<ProductMaterialMap>($"product{productId}", productionData, expiryTime);
       return Ok();
+        
     }
 
-    [HttpPost("approve")]
-    public IActionResult ApproveProduction(int approve, string keyValue) //üretimi onaylayıp üretmeye başlayan yer
+    [HttpPost("startProduction")]
+    public IActionResult StartProduction(int approve, string keyValue) //üretimi onaylayıp üretmeye başlayan yer
     {
         if (approve == 1)
         {
@@ -50,7 +51,7 @@ public class DraftProduceProductController : Controller
             foreach (var key in keys)
             {
                 
-                // JSON verisini ProductMaterialMap nesnesine dönüşür
+                // JSON verisini ProductMaterialMap nesnesine dönüştürülür
                 var productionRequest = _cacheService.GetData<ProductMaterialMap>(key);
 
                 // Ürün üretim aşaması
@@ -74,7 +75,6 @@ public class DraftProduceProductController : Controller
     public IActionResult GetProduction()
     {
         var redisData = _productMaterialRecordService.GetAllRedisData();
-
         return Ok(redisData);
     }
     [HttpGet ("key")]

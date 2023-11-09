@@ -1,8 +1,12 @@
-﻿namespace Product.Interfaces;
+﻿using Product.Entity;
+
+namespace Product.Interfaces;
 
 public interface IProductMaterialRecordService
 {
    void ProductMaterialsToRedis();
-    List<string> GetAllRedisData();
-    string GetRedisData(string key);
+    
+   List<ProductMaterialMap> GetAllRedisData();
+   ProductMaterialMap GetRedisData(string key);
+   
 }

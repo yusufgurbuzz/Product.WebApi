@@ -3,7 +3,9 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Service
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Services.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Entity.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Interfaces.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Repositories.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Interfaces.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Repositories.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Entity.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\obj\Debug\net7.0\Product.Services.csproj.AssemblyReference.cache
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\obj\Debug\net7.0\Product.Services.GeneratedMSBuildEditorConfig.editorconfig
@@ -15,5 +17,3 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Service
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\obj\Debug\net7.0\refint\Product.Services.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\obj\Debug\net7.0\Product.Services.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\obj\Debug\net7.0\ref\Product.Services.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Repositories.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Services\Product.Services\bin\Debug\net7.0\Product.Repositories.pdb

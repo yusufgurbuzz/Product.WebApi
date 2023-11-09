@@ -15,7 +15,7 @@ public class MaterialController : Controller
     }
 
     [HttpGet]
-    public IActionResult GetAllProducts()
+    public IActionResult GetAllMaterials()
     {
         var material = _serviceManager.MaterialService.GetAllMaterial(false);
         return Ok(material);

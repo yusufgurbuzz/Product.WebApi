@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Product.Interfaces/1.0.0": {
+        "dependencies": {
+          "Product.Entity": "1.0.0"
+        },
+        "runtime": {
+          "Product.Interfaces.dll": {}
+        }
+      },
+      "Product.Entity/1.0.0": {
+        "runtime": {
+          "Product.Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Product.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Product.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

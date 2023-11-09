@@ -2,6 +2,7 @@
 using Product.Interfaces;
 using Product.Repositories;
 using Product.Services;
+using StackExchange.Redis;
 
 namespace ProductWebApi.Extensions;
 
@@ -21,9 +22,11 @@ public static class ServicesExtensions
     {
         services.AddScoped<IServiceManager,ServiceManager>();
         services.AddScoped<ICacheService, CacheService>();
+        services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
         
        
     }
+   
     
 
 }

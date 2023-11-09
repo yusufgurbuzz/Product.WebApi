@@ -9,8 +9,8 @@ namespace Product.Services;
 
 public class ProductMaterialRecordService : IProductMaterialRecordService
 {
-    protected readonly ApplicationDbContext _dbContext;
-    protected readonly IConnectionMultiplexer _connectionMultiplexer;
+    private readonly ApplicationDbContext _dbContext;
+    private readonly IConnectionMultiplexer _connectionMultiplexer;
     
     public  ProductMaterialRecordService(ApplicationDbContext context,IConnectionMultiplexer connectionMultiplexer)
     {
@@ -44,32 +44,37 @@ public class ProductMaterialRecordService : IProductMaterialRecordService
             
         }
     }
-
-    public List<string> GetAllRedisData()
+  
+    public List<ProductMaterialMap> GetAllRedisData()
     {
+        List<ProductMaterialMap> productMaterialMap = new List<ProductMaterialMap>();
         IDatabase redisDb = _connectionMultiplexer.GetDatabase();
+        //Redis sunucusunun bir veya daha fazla uç noktasını alır ve ardından bunların ilkini seçer.
         var keys = redisDb.Multiplexer.GetServer(_connectionMultiplexer.GetEndPoints().First()).Keys();
         var redisData = new List<string>();
 
         foreach (var key in keys)
         {
-            var value = redisDb.StringGet(key);
-            redisData.Add($"{key}:{value}");
+            var keyValue = redisDb.StringGet(key);
+            var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(keyValue);
+            productMaterialMap.Add(productMaterial);
         }
 
-        return redisData;
+        return productMaterialMap;
     }
 
-    public string GetRedisData(string key)
+    public ProductMaterialMap GetRedisData(string key)
     {
         IDatabase redisDb = _connectionMultiplexer.GetDatabase();
         var redisData = redisDb.StringGet(key);
+        var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(redisData);
+        
 
-        if (redisData.IsNull)
+        if (productMaterial is null)
         {
             return null;
         }
 
-        return redisData.ToString();
+        return productMaterial;
     }
 }

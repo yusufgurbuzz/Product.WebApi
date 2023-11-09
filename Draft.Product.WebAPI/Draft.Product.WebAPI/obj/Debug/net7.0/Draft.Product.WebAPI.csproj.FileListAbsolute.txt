@@ -5,11 +5,14 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.W
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Draft.Product.WebAPI.runtimeconfig.json
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Draft.Product.WebAPI.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Draft.Product.WebAPI.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Npgsql.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
@@ -20,7 +23,9 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.W
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Entity.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Interfaces.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Repositories.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Services.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Repositories.pdb
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Services.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Entity.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Interfaces.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\obj\Debug\net7.0\Draft.Product.WebAPI.csproj.AssemblyReference.cache
@@ -44,8 +49,3 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.W
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\obj\Debug\net7.0\Draft.Product.WebAPI.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\obj\Debug\net7.0\Draft.Product.WebAPI.genruntimeconfig.cache
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\obj\Debug\net7.0\ref\Draft.Product.WebAPI.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Services.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\Product.Services.pdb
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\AutoMapper.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Draft.Product.WebAPI\Draft.Product.WebAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

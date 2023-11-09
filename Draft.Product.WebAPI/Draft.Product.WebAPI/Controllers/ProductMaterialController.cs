@@ -8,12 +8,10 @@ namespace Draft.Product.WebAPI.Controllers;
 public class ProductMaterialController : Controller
 {
     private readonly IProductMaterialRecordService _productMaterialRecordService;
-    private readonly IConnectionMultiplexer _connectionMultiplexer;
-    public ProductMaterialController(IProductMaterialRecordService productMaterialRecordService,IConnectionMultiplexer connectionMultiplexer)
+   
+    public ProductMaterialController(IProductMaterialRecordService productMaterialRecordService)
     {
         _productMaterialRecordService = productMaterialRecordService;
-        _connectionMultiplexer = connectionMultiplexer;
-
     }
 
     [HttpGet]

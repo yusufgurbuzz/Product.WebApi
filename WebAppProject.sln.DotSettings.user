@@ -1,0 +1,36 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3eaabbe0_002D26a7_002D43de_002D8842_002De253cc0701ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetProducts_ReturnsSuccessStatusCode" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.GetProducts_ReturnsSuccessStatusCode&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.GetProductById_ReturnExistingId_ReturnsProduct&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.GetProductById_ReturnNonExistingId_ReturnsProduct&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.CreateProduct_ReturnCreated&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.DeleteProductById_ReturnNoContent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.UpdateMaterialById_ReturnNoContent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductionRecordControllerTest.GetProduceProduct_ReturnOk&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductionRecordControllerTest.ProduceProduct_ProductNotFound_ReturnsNotFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.ProductProductionRequest_ReturnsSuccessStatusCode&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.ProductProductionRequest_ReturnExistingId_ReturnsProduct&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.ProductProductionRequest_ReturnNonExistingId_ReturnsProduct&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.RemoveProductionByKey_ReturnsNoContent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.ProductProductionRequest_ReturnsOk&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.StartProduction_ApproveIs1_ReturnsNoContent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.DraftProduceProductControllerTest.StartProduction_ApproveIsNot1_ReturnsNoContent&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductionRecordControllerTest.ProduceProduct_ReturnsOk&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a719bf2_002De7ad_002D4cd9_002D9aa0_002Dcbfe894918b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test" Presentation="&amp;lt;Test&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d79eade9_002Dd455_002D4fba_002Db598_002D8146ec58127a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProduceProduct_ProductNotFound_ReturnsNotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductionRecordControllerTest.ProduceProduct_ProductNotFound_ReturnsNotFound&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d7d7030b_002Dd8ee_002D4765_002Da013_002D8c5eebb7cb67/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateOneMaterial_ReturnsNoContent" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.MaterialControllerTest.UpdateOneMaterial_ReturnsNoContent&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

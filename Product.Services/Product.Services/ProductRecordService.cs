@@ -21,7 +21,8 @@ public class ProductRecordService : IProductionRecordService
     }
     
     public void ProduceProduct(int productId, int quantity) //üretim kısmı
-    {
+    { 
+        
         bool trackChanges = false;
         var product = _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
     
@@ -64,8 +65,10 @@ public class ProductRecordService : IProductionRecordService
                
             };
            
-            _repositoryManager.ProductionRecordRepository.AddProductionRecord(productionRecord);
+          
+             _repositoryManager.ProductionRecordRepository.AddProductionRecord(productionRecord);
         }
+       
         
             // Ürün stokunu artırma
             product.ProductStock += quantity;
