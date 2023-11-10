@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Storage;
 using Newtonsoft.Json;
 using Product.Entity;
 using Product.Interfaces;
@@ -12,12 +13,12 @@ namespace Product.Services;
 public class ProductRecordService : IProductionRecordService
 {
     private readonly IRepositoryManager _repositoryManager;
-    private readonly ICacheService _cacheService;
    
-    public ProductRecordService(IRepositoryManager repositoryManager,ICacheService cacheService)
+   
+    public ProductRecordService(IRepositoryManager repositoryManager)
     {
         _repositoryManager = repositoryManager;
-        _cacheService = cacheService;
+        
     }
     
     public void ProduceProduct(int productId, int quantity) //üretim kısmı
@@ -26,7 +27,7 @@ public class ProductRecordService : IProductionRecordService
         bool trackChanges = false;
         var product = _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
     
-        if (product == null)
+        if (product is null)
         {
             throw new Exception("Product not found");
         }

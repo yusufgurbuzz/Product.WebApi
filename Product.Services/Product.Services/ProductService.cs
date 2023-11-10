@@ -27,9 +27,12 @@ public class ProductService : IProductService
     {
         if (product is null)
         {
-            throw new ArgumentException(nameof(product));
+            throw new NullReferenceException();
         }
-        
+        if (_repositoryManager is null || _repositoryManager.ProductRepository is null)
+        {
+            throw new InvalidOperationException("Repository is not properly initialized.");
+        }
         _repositoryManager.ProductRepository.CreateOneProduct(product);
         _repositoryManager.Save();
 
@@ -45,7 +48,7 @@ public class ProductService : IProductService
 
         if (product is null)
         {
-            throw new ArgumentException(nameof(product));
+            throw new ArgumentNullException();
         }
 
         entity.ProductId = product.ProductId;

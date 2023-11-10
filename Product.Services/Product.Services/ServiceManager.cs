@@ -11,12 +11,12 @@ public class ServiceManager : IServiceManager
     private readonly Lazy<IProductionRecordService> _productionRecordService;
     private readonly ICacheService _cacheService;
    
-    public ServiceManager( IRepositoryManager repositoryManager, ICacheService cacheService)
+    public ServiceManager( IRepositoryManager repositoryManager)
     {
         _productService = new Lazy<IProductService>(()=> new ProductService(repositoryManager));
         _materialService = new Lazy<IMaterialService>(()=> new MaterialService(repositoryManager));
         _productMaterialService = new Lazy<IProductMaterialService>(()=>new ProductMaterialService(repositoryManager));
-        _productionRecordService = new Lazy<IProductionRecordService>(() => new ProductRecordService(repositoryManager,_cacheService));
+        _productionRecordService = new Lazy<IProductionRecordService>(() => new ProductRecordService(repositoryManager));
         
     }
 
