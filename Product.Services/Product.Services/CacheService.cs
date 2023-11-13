@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Product.Entity;
 using Product.Interfaces;
 using StackExchange.Redis;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Product.Services;
 
 public class CacheService : ICacheService
 {
     private IDatabase _cacheDb;
+    private readonly IConnectionMultiplexer _connectionMultiplexer;
 
-    public CacheService()
+    public CacheService(IConnectionMultiplexer connectionMultiplexer)
     {
+        _connectionMultiplexer = connectionMultiplexer;
         var redis = ConnectionMultiplexer.Connect("localhost:6379");
         _cacheDb = redis.GetDatabase();
     }
@@ -78,4 +82,37 @@ public class CacheService : ICacheService
         return keys;
     }
 
+    public List<ProductMaterialMap> GetAllRedisData()
+    {
+        List<ProductMaterialMap> productMaterialMap = new List<ProductMaterialMap>();
+        IDatabase redisDb = _connectionMultiplexer.GetDatabase();
+        //Redis sunucusunun bir veya daha fazla uç noktasını alır ve ardından bunların ilkini seçer.
+        var keys = redisDb.Multiplexer.GetServer(_connectionMultiplexer.GetEndPoints().First()).Keys();
+        var redisData = new List<string>();
+
+        foreach (var key in keys)
+        {
+            var keyValue = redisDb.StringGet(key);
+            var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(keyValue);
+            productMaterialMap.Add(productMaterial);
+        }
+
+        return productMaterialMap;
+    }
+    public ProductMaterialMap GetRedisData(string key)
+    {
+        IDatabase redisDb = _connectionMultiplexer.GetDatabase();
+        var redisData = redisDb.StringGet(key);
+        var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(redisData);
+        
+
+        if (productMaterial is null)
+        {
+            return null;
+        }
+
+        return productMaterial;
+    }
+
+    
 }

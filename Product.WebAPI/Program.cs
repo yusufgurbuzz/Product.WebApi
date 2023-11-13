@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
-builder.Services.AddScoped<IProductMaterialRecordService,ProductMaterialRecordService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

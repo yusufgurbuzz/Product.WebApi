@@ -1,4 +1,6 @@
-﻿namespace Product.Interfaces;
+﻿using Product.Entity;
+
+namespace Product.Interfaces;
 
 public interface ICacheService
 {
@@ -7,5 +9,8 @@ public interface ICacheService
     bool SetData<T>(string key, T value, DateTimeOffset expirationTime);
     object RemoveData(String key);
     IEnumerable<string> GetAllKeysTitle(string title);
+    List<ProductMaterialMap> GetAllRedisData();
+    ProductMaterialMap GetRedisData(string key);
 
+    
 }

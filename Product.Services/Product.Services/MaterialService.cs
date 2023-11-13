@@ -26,7 +26,7 @@ public class MaterialService : IMaterialService
     {
         if (material is null)
         {
-            throw new ArgumentException(nameof(material));
+            throw new NullReferenceException(nameof(material));
         }
         
         _repositoryManager.MaterialRepository.CreateOneMaterial(material);

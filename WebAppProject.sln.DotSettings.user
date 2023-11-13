@@ -17,14 +17,11 @@
     &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.UpdateOneProduct_WhenNullProductProvided_ShouldThrowArgumentException&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.DeleteProduct_WithProductById&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.DeleteOneProduct_WhenInvalidIdProvided_ShouldThrowException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.MaterialServiceTest.DeleteMaterial_WithMaterialById_ShouldDeleteMaterial&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.MaterialServiceTest.DeleteMaterial_WhenInvalidIdProvided_ShouldThrowException&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d79eade9_002Dd455_002D4fba_002Db598_002D8146ec58127a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ProduceProduct_ProductNotFound_ReturnsNotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductRecordServiceTest.ProduceProduct_WhenProductNotFound_ShouldThrowException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductRecordServiceTest.ProduceProduct_WhenMaterialsCountIsLessThanThree_ShouldThrowException&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
 	
 	
 	</wpf:ResourceDictionary>

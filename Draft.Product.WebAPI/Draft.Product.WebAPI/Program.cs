@@ -14,7 +14,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureService();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

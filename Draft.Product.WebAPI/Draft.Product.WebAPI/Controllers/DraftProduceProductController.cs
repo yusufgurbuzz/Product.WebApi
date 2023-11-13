@@ -11,15 +11,13 @@ public class DraftProduceProductController : Controller
     
     private readonly IServiceManager _serviceManager;
     private readonly ICacheService _cacheService;
-    private readonly IProductMaterialRecordService _productMaterialRecordService;
+ 
     
     public DraftProduceProductController(IServiceManager serviceManager,ICacheService cacheService,
-        IProductMaterialRecordService productMaterialRecordService,IConnectionMultiplexer connectionMultiplexer)
+       IConnectionMultiplexer connectionMultiplexer)
     {
         _serviceManager = serviceManager;
         _cacheService = cacheService;
-        _productMaterialRecordService = productMaterialRecordService;
-        
     }
 
     [HttpPost("productionRequest")]
@@ -74,7 +72,7 @@ public class DraftProduceProductController : Controller
     [HttpGet]
     public IActionResult GetProduction()
     {
-        var redisData = _productMaterialRecordService.GetAllRedisData();
+        var redisData = _cacheService.GetAllRedisData();
         return Ok(redisData);
     }
     [HttpGet ("key")]
@@ -85,7 +83,7 @@ public class DraftProduceProductController : Controller
             return BadRequest("Key is required.");
         }
 
-        var redisData = _productMaterialRecordService.GetRedisData(key);
+        var redisData = _cacheService.GetRedisData(key);
 
         if (redisData == null)
         {
@@ -101,8 +99,4 @@ public class DraftProduceProductController : Controller
          _cacheService.RemoveData(key);
          return NoContent();
     }
- 
-  
-
-
 }

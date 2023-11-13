@@ -20,12 +20,13 @@ public static class Configure
     }
     public static void ConfigureService(this IServiceCollection services)
     {
-        
-            services.AddScoped<IProductMaterialRecordService,ProductMaterialRecordService>();
             services.AddScoped<IServiceManager, ServiceManager>();
             services.AddScoped<IRepositoryManager,RepositoryManager>();
+            services.AddScoped<IConnectionMultiplexer>(sp => { 
+                var configuration = "localhost:6379";
+                return StackExchange.Redis.ConnectionMultiplexer.Connect(configuration);
+                });
+            services.AddAutoMapper(typeof(AutoMapperProfiles));  
             services.AddScoped<ICacheService, CacheService>();
-            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
-            services.AddAutoMapper(typeof(AutoMapperProfiles));
     }
 }
