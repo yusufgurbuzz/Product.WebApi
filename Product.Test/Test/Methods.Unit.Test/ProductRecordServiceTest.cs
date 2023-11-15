@@ -20,7 +20,7 @@ public class ProductRecordServiceTest
         Assert.Throws<NullReferenceException>(() => productionService.ProduceProduct(8, 1));
     }
     [Fact]
-    public void ProduceProduct_WhenMaterialsCountIsLessThanThree_ShouldThrowException()
+    public void ProduceProduct_WhenMaterialsCountIsLessThanThree_ShouldProduce()
     {
         // Arrange
         var mockRepositoryManager = new Mock<IRepositoryManager>();
@@ -38,5 +38,30 @@ public class ProductRecordServiceTest
         // Act & Assert
         Assert.NotNull(() => productionService.ProduceProduct(7, 1));
     }
+
+    [Fact]
+    public void ProduceProduct_ShouldThrowException_WhenProductNotFound()
+    {
+        // Arrange
+        var mockRepositoryManager = new Mock<IRepositoryManager>();
+        var mockProductRepository = new Mock<IProductRepository>();
+
+        mockRepositoryManager.Setup(repo => repo.ProductRepository)
+            .Returns(mockProductRepository.Object);
+
+        var productRecordService = new ProductRecordService(mockRepositoryManager.Object);
+
+        int productId = 80;
+        int quantity = 10;
+
+       
+        mockProductRepository.Setup(repo => repo.GetProductById(productId, false))
+            .Returns((Product.Entity.Product)null);
+
+        // Act & Assert
+        var ex = Assert.Throws<Exception>(() => productRecordService.ProduceProduct(productId, quantity));
+        Assert.Equal("Product not found", ex.Message);
+    }
     
+
 }

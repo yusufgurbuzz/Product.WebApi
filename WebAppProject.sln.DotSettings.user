@@ -1,27 +1,35 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a719bf2_002De7ad_002D4cd9_002D9aa0_002Dcbfe894918b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Test&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test" Presentation="&amp;lt;Test&amp;gt;" /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9a234a3d_002D5a46_002D4f90_002D9dca_002D5b26ce350d4a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ProduceProduct_WhenProductNotFound_ShouldThrowException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\yusuf.gurbuz\AppData\Local\JetBrains\Rider2023.2\resharper-host\temp\Rider\vAny\CoverageData\_WebAppProject.312546872\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0c96875c_002Db154_002D47b8_002Da0d3_002Dacd89bc837c6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeleteOneMaterial_ReturnsNoContent #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductRecordServiceTest.ProduceProduct_WhenProductNotFound_ShouldThrowException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductRecordServiceTest.ProduceProduct_WhenMaterialsCountIsLessThanThree_ShouldThrowException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.GetProduct_WhenCalled_ShouldReturnProducts&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.GetProductById_WhenValidIdProvided_ShouldReturnProduct&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.GetProductById_WhenInvalidIdProvided_ShouldReturnNull&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.CreateOneProduct_WhenValidProductProvided_ShouldAddToRepository&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.CreateOneProduct_WhenNullProductProvided_ShouldThrowArgumentException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.UpdateOneProduct_WhenValidIdAndProductProvided_ShouldUpdateProductInRepository&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.UpdateOneProduct_WhenInvalidIdProvided_ShouldThrowException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.UpdateOneProduct_WhenNullProductProvided_ShouldThrowArgumentException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.DeleteProduct_WithProductById&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.ProductServiceTest.DeleteOneProduct_WhenInvalidIdProvided_ShouldThrowException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.MaterialServiceTest.DeleteMaterial_WithMaterialById_ShouldDeleteMaterial&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.MaterialServiceTest.DeleteMaterial_WhenInvalidIdProvided_ShouldThrowException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.MaterialControllerTest.DeleteOneMaterial_ReturnsNoContent&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	
-	
-	
-	</wpf:ResourceDictionary>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1afb6f51_002D24cc_002D40ec_002D9c80_002D2119a9b2dc06/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Methods.Unit.Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test" Presentation="&amp;lt;Test&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1b2b0ea8_002Dfae0_002D4267_002Da668_002D02f8a6c6fab3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeleteOneMaterial_ReturnsNoContent" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.MaterialControllerTest.DeleteOneMaterial_ReturnsNoContent&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=381bde21_002Dd010_002D4af1_002D8f96_002D3581e5c2ce93/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllKeysTitle_ReturnsMatchingKeys #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.CacheServiceTest.GetAllKeysTitle_ReturnsMatchingKeys&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4a4d9403_002D9348_002D435f_002Dac36_002D6c9f8c25cf11/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllKeysTitle_ReturnsMatchingKeys #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.CacheServiceTest.GetAllKeysTitle_ReturnsMatchingKeys&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d3f1ca80_002D1b36_002D4c0e_002D9a38_002D28c161ddd882/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllKeysTitle_ReturnsMatchingKeys" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Methods.Unit.Test.CacheServiceTest.GetAllKeysTitle_ReturnsMatchingKeys&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dc01c793_002Dc581_002D490a_002Da9b9_002D5396ff2fdaf8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeleteProductById_ReturnNoContent" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4F0BC154-CFFF-44B2-866D-C0EDFB3510F3::net7.0::Test.Endpoints.ProductControllerTest.DeleteProductById_ReturnNoContent&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

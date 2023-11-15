@@ -74,7 +74,7 @@ public class MaterialController : Controller
         try
         {
             _serviceManager.MaterialService.DeleteOneMaterial(id,false);
-            return NoContent();
+            return Ok();
         }
         catch (Exception ex)
         {

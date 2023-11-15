@@ -2,6 +2,6 @@
 
 public interface IProductionRecordService
 {
-    public void ProduceProduct(int productId,int Quantity);
+    public void ProduceProduct(int productId, int Quantity);
   
 }

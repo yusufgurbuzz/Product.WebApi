@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http.Json;
 using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -79,11 +80,11 @@ public class ProductControllerTest : IClassFixture<WebApplicationFactory<IApiMar
    [Fact]
    public async Task DeleteProductById_ReturnNoContent()
    {
-       int productId = 12;
+       int productId = 17; // böyle bir Id veritabanında var mı?
        
-       var response = await _httpClient.DeleteAsync($"/api/Products/{productId}");
+       var responseDelete = await _httpClient.DeleteAsync($"/api/Products/{productId}");
 
-       Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+       Assert.Equal(HttpStatusCode.NoContent, responseDelete.StatusCode);
    }
 
    [Fact]

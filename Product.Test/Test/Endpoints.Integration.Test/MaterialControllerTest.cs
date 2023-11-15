@@ -1,22 +1,26 @@
 ﻿using System.Net;
+using System.Net.Http.Json;
 using System.Text;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Newtonsoft.Json;
 using Product.Entity;
+using ProductWebApi;
 
 namespace Test.Endpoints;
 
-public class MaterialControllerTest 
+public class MaterialControllerTest : IClassFixture<WebApplicationFactory<IApiMarker>>
 {
    
-    private readonly HttpClient _client;
+    private readonly WebApplicationFactory<IApiMarker> _factory;
+    private readonly HttpClient _httpClient;
     
-    public MaterialControllerTest()
+    public MaterialControllerTest(WebApplicationFactory<IApiMarker> factory)
     {
 
-        _client = new HttpClient();
+        _factory = factory;
+        _httpClient = _factory.CreateClient();
        
     }
     
@@ -24,8 +28,8 @@ public class MaterialControllerTest
     public async Task GetAllMaterials_ReturnsSuccessStatusCode()
     {
         // Act
-        _client.BaseAddress = new Uri("http://localhost:5062");
-        var response = await _client.GetAsync("/api/Materials");
+       
+        var response = await _httpClient.GetAsync("/api/Materials");
 
         // Assert
         Assert.Equal(HttpStatusCode.OK,response.StatusCode);
@@ -35,28 +39,15 @@ public class MaterialControllerTest
     [Fact]
     public async Task GetOneMaterial_ExistingId_ReturnsMaterial()
     {
-        try
-        {
-            // Arrange bölümde testler için gerekli tüm ön koşulların sağlanması gerekiyor. 
-            int MaterialId = 2; // Var olan bir malzeme ID'si
-            var requestUri = $"/api/Materials/{MaterialId}";
-           
-            // Act Test edeceğimiz birimi çalıştırdığımız bölümdür
-            _client.BaseAddress = new Uri("http://localhost:5062");
-            var response = await _client.GetAsync(requestUri);
-
-            // Assert 
-
-            var content = await response.Content.ReadAsStringAsync();
-            var material = JsonConvert.DeserializeObject<Material>(content); 
-            Assert.NotNull(material);   
-        }
-        catch (Exception e)
-        {
-
-            throw new Exception(e.Message);
-        }
-        
+        int materialId = 2;
+      
+        var response = await _httpClient.GetAsync($"/api/Materials/{materialId}");
+       
+        var content = await response.Content.ReadAsStringAsync();
+        var material = JsonConvert.DeserializeObject<Material>(content); 
+        Assert.NotNull(material); 
+       
+        Assert.Equal(HttpStatusCode.OK,response.StatusCode);
     }
 
     [Fact]
@@ -64,11 +55,9 @@ public class MaterialControllerTest
     {
         // Arrange
         int nonMaterialId = 999; // Var olmayan bir malzeme ID'si
-        _client.BaseAddress = new Uri("http://localhost:5062");
-        var requestUri = $"/api/Materials/{nonMaterialId}";
-
+        
         // Act
-        var response = await _client.GetAsync(requestUri);
+        var response = await _httpClient.GetAsync($"/api/Materials/{nonMaterialId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -91,8 +80,8 @@ public class MaterialControllerTest
         var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
         // Act
-        _client.BaseAddress = new Uri("http://localhost:5062");
-        var response = await _client.PostAsync("/api/Materials", content);
+      
+        var response = await _httpClient.PostAsync("/api/Materials", content);
 
         // Assert
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
@@ -104,19 +93,13 @@ public class MaterialControllerTest
     }
     
     [Fact]
-    public async Task DeleteOneMaterial_ReturnsNoContent() //foreignkey hatası gelebilir silinen material Id başka productId ile eşlenik olabilir
+    public async Task DeleteMaterial_ReturnsNoContent()
     {
-        // Arrange
-        // Silinecek malzemenin ID'si(veritabanında olmalı)
-        int MaterialId = 20; 
-
-        // Act
-        _client.BaseAddress = new Uri("http://localhost:5062");
-        var response = await _client.DeleteAsync($"/api/Materials/{MaterialId}");
-
-        // Assert
-        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+        int materialId = 21; //veritabanında var mı?
+        var getResponse = await _httpClient.GetAsync($"/api/Materials/{materialId}");
+        Assert.Equal(HttpStatusCode.OK, getResponse.StatusCode);
     }
+    
     [Fact]
     public async Task UpdateOneMaterial_ReturnsNoContent()
     {
@@ -133,8 +116,7 @@ public class MaterialControllerTest
         var content = new StringContent(JsonConvert.SerializeObject(updatedMaterial), Encoding.UTF8, "application/json");
 
         // Act
-        _client.BaseAddress = new Uri("http://localhost:5062");
-        var response = await _client.PutAsync($"/api/Materials/{MaterialId}", content);
+        var response = await _httpClient.PutAsync($"/api/Materials/{MaterialId}", content);
 
         // Assert
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode); 

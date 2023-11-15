@@ -315,6 +315,7 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Te
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\refs\WindowsBase.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Castle.Core.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\FluentAssertions.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
@@ -337,6 +338,7 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Te
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Microsoft.TestPlatform.Utilities.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Moq.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Npgsql.dll
@@ -443,5 +445,3 @@ C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Te
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\obj\Debug\net7.0\Test.pdb
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\obj\Debug\net7.0\Test.genruntimeconfig.cache
 C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\obj\Debug\net7.0\ref\Test.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Castle.Core.dll
-C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.Test\Test\bin\Debug\net7.0\Moq.dll
