@@ -62,6 +62,26 @@ public class ProductRecordServiceTest
         var ex = Assert.Throws<Exception>(() => productRecordService.ProduceProduct(productId, quantity));
         Assert.Equal("Product not found", ex.Message);
     }
-    
+
+    [Fact]
+    public void ProduceProduct_ShouldThrowException_WhenMaterialCountIsLessThan3()
+    {
+        int productId = 20;
+        int quantity = 5;
+        
+        var mockRepositoryManager = new Mock<IRepositoryManager>();
+        var productionService = new ProductRecordService(mockRepositoryManager.Object);
+        
+        var productRecordService = new ProductRecordService(mockRepositoryManager.Object);
+        mockRepositoryManager.Setup(repo => repo.ProductRepository.GetProductById(It.IsAny<int>(), It.IsAny<bool>()))
+            .Returns(new Product.Entity.Product());
+        
+        mockRepositoryManager.Setup(repo => repo.ProductMaterialRepository.GetProductMaterialsByProductId(It.IsAny<int>()))
+            .Returns(new List<ProductMaterial> { new ProductMaterial() });
+        
+        var ex = Assert.Throws<Exception>(() => productRecordService.ProduceProduct(productId, quantity));
+        Assert.Equal("At least 3 materials are required to produce the product",ex.Message);
+        
+    }
 
 }

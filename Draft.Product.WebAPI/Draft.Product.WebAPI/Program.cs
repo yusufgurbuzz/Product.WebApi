@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureService();
+builder.Services.ConfigureRedis(builder.Configuration);
 
 var app = builder.Build();
 

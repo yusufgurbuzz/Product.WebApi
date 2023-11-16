@@ -80,7 +80,7 @@ public class ProductControllerTest : IClassFixture<WebApplicationFactory<IApiMar
    [Fact]
    public async Task DeleteProductById_ReturnNoContent()
    {
-       int productId = 17; // böyle bir Id veritabanında var mı?
+       int productId = 20; // böyle bir Id veritabanında var mı?
        
        var responseDelete = await _httpClient.DeleteAsync($"/api/Products/{productId}");
 

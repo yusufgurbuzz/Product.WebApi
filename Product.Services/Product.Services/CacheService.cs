@@ -17,8 +17,8 @@ public class CacheService : ICacheService
     public CacheService(IConnectionMultiplexer connectionMultiplexer)
     {
         _connectionMultiplexer = connectionMultiplexer;
-        var redis = ConnectionMultiplexer.Connect("localhost:6379");
-        _cacheDb = redis.GetDatabase();
+       // var redis = ConnectionMultiplexer.Connect("localhost:6379");
+       _cacheDb = _connectionMultiplexer.GetDatabase();
     }
 
     public T GetData<T>(string key)
