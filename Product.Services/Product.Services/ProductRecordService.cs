@@ -55,7 +55,7 @@ public class ProductRecordService : IProductionRecordService
     
             // Malzeme stokunu güncelleme
             material.MaterialUnit -= quantity * productMaterial.Quantity;
-            _repositoryManager.MaterialRepository.UpdateOneMaterial(material);
+            _repositoryManager.MaterialRepository.UpdateMaterial(material);
             
             var productionRecord = new ProductionRecord
             {
@@ -73,7 +73,7 @@ public class ProductRecordService : IProductionRecordService
         
             // Ürün stokunu artırma
             product.ProductStock += quantity;
-            _repositoryManager.ProductRepository.UpdateOneProduct(product);
+            _repositoryManager.ProductRepository.UpdateProduct(product);
             _repositoryManager.Save();
          
     }

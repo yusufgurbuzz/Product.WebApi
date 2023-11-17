@@ -2,11 +2,11 @@
 
 public interface IProductService
 {
-      IQueryable<Entity.Product> GetAllProduct(bool trackChanges);
+      IQueryable<Entity.Product> GetProduct(bool trackChanges);
       Entity.Product GetProductById(int id,bool trackChanges);
-      void CreateOneProduct(Entity.Product product);
-      void UpdateOneProduct(int id,Entity.Product product,bool trackChanges);
-      void DeleteOneProduct(int id,bool trackChanges);
+      void CreateProduct(Entity.Product product);
+      void UpdateProductById(int id,Entity.Product product,bool trackChanges);
+      void DeleteProductById(int id,bool trackChanges);
       
 
 }

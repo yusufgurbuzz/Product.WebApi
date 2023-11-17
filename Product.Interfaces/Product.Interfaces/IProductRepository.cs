@@ -5,11 +5,11 @@ namespace Product.Interfaces;
 
 public interface IProductRepository : IRepositoryBase<Entity.Product>
 {
-    IQueryable<Entity.Product> GetAllProduct(bool trackChanges);
+    IQueryable<Entity.Product> GetProduct(bool trackChanges);
     Entity.Product GetProductById(int id, bool trackChanges);
-    void CreateOneProduct(Entity.Product product);
-    void UpdateOneProduct(Entity.Product product);
-    void DeleteOneProduct(Entity.Product product);
+    void CreateProduct(Entity.Product product);
+    void UpdateProduct(Entity.Product product);
+    void DeleteProduct(Entity.Product product);
     List<ProductMaterial> GetProductMaterialByProductId(int productId);
 
 }

@@ -22,11 +22,11 @@ public class ProductServiceTest
         var mockRepositoryManager = new Mock<IRepositoryManager>();
         var productService = new ProductService(mockRepositoryManager.Object);
 
-        mockRepositoryManager.Setup(repo=>repo.ProductRepository.GetAllProduct(It.IsAny<bool>()))
+        mockRepositoryManager.Setup(repo=>repo.ProductRepository.GetProduct(It.IsAny<bool>()))
             .Returns(products.AsQueryable());
         //AsQueryable bir IEnumerable koleksiyonunu IQueryable türüne dönüştürür. 
 
-        var returnResult = productService.GetAllProduct(false).ToList();
+        var returnResult = productService.GetProduct(false).ToList();
         Assert.Equal(products.Count,returnResult.Count);
 
     }
@@ -91,9 +91,9 @@ public class ProductServiceTest
         mockRepositoryManager.Setup(r => r.ProductRepository).Returns(mockProductRepository.Object);
         
         // Act
-        mockRepositoryManager.Setup(repo => repo.ProductRepository.CreateOneProduct(It.IsAny<global::Product.Entity.Product> ()));
+        mockRepositoryManager.Setup(repo => repo.ProductRepository.CreateProduct(It.IsAny<global::Product.Entity.Product> ()));
        
-        productService.CreateOneProduct(productToAdd);
+        productService.CreateProduct(productToAdd);
 
         // Assert
         mockRepositoryManager.Verify(repo => repo.Save());
@@ -106,7 +106,7 @@ public class ProductServiceTest
         var productService = new ProductService(mockRepositoryManager.Object);
 
         // Act & Assert
-        Assert.Throws<NullReferenceException>(() => productService.CreateOneProduct(null));
+        Assert.Throws<NullReferenceException>(() => productService.CreateProduct(null));
     }
     [Fact]
     public void UpdateOneProduct_WhenValidIdAndProductProvided_ShouldUpdateProductInRepository()
@@ -133,14 +133,14 @@ public class ProductServiceTest
             .Returns(existingProduct);
 
         // Act
-         productService.UpdateOneProduct(1, updatedProduct, true); // services
+         productService.UpdateProductById(1, updatedProduct, true); // services
 
         // Assert
       
         mockRepositoryManager.Verify(repo => repo.ProductRepository.GetProductById(1, true));
         
         //repository
-        mockRepositoryManager.Verify(repo => repo.ProductRepository.UpdateOneProduct(It.IsAny<global::Product.Entity.Product>()));
+        mockRepositoryManager.Verify(repo => repo.ProductRepository.UpdateProduct(It.IsAny<global::Product.Entity.Product>()));
         
         mockRepositoryManager.Verify(repo => repo.Save());
 
@@ -161,7 +161,7 @@ public class ProductServiceTest
         //metodunun belirli parametrelerle çağrıldığında gerçek bir ürün döndürmek yerine, null değeri döndürmesini sağlar.
 
         // Act & Assert
-        Assert.Throws<Exception>(() => productService.UpdateOneProduct(1, new global::Product.Entity.Product(), true));
+        Assert.Throws<Exception>(() => productService.UpdateProductById(1, new global::Product.Entity.Product(), true));
     }
 
     [Fact]
@@ -180,7 +180,7 @@ public class ProductServiceTest
         mockRepositoryManager.Setup(repo=>repo.ProductRepository.GetProductById(It.IsAny<int>(),It.IsAny<bool>()))
             .Returns(products);//repo
         
-          productService.DeleteOneProduct(1, true); //service
+          productService.DeleteProductById(1, true); //service
           
         mockRepositoryManager.Verify(repo => repo.Save());
     }
@@ -196,7 +196,7 @@ public class ProductServiceTest
             .Returns((global::Product.Entity.Product)null); //id yok ise null dönecek
 
         // Act & Assert
-        Assert.Throws<Exception>(() => productService.DeleteOneProduct(1, trackChanges: true));
+        Assert.Throws<Exception>(() => productService.DeleteProductById(1, trackChanges: true));
     }
 
 

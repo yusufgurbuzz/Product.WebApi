@@ -9,7 +9,7 @@ public class MaterialRepository: RepositoryBase<Material>, IMaterialRepository
     {
     }
 
-    public IQueryable<Material> GetAllMaterial(bool trackChanges)
+    public IQueryable<Material> GetMaterial(bool trackChanges)
     {
         return FindAll(trackChanges);
     }
@@ -19,17 +19,17 @@ public class MaterialRepository: RepositoryBase<Material>, IMaterialRepository
         return FindByCondition(b => b.MaterialId.Equals(id), trackChanges).SingleOrDefault();
     }
 
-    public void CreateOneMaterial(Material material)
+    public void CreateMaterial(Material material)
     {
         Create(material);
     }
 
-    public void UpdateOneMaterial(Material material)
+    public void UpdateMaterial(Material material)
     {
         Update(material);
     }
 
-    public void DeleteOneMaterial(Material material)
+    public void DeleteMaterial(Material material)
     {
         Delete(material);
     }

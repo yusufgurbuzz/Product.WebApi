@@ -12,9 +12,9 @@ public class MaterialService : IMaterialService
 
     }    
     
-    public IQueryable<Material> GetAllMaterial(bool trackChanges)
+    public IQueryable<Material> GetMaterial(bool trackChanges)
     {
-        return _repositoryManager.MaterialRepository.GetAllMaterial(trackChanges);
+        return _repositoryManager.MaterialRepository.GetMaterial(trackChanges);
     }
 
     public Material GetMaterialById(int id, bool trackChanges)
@@ -22,20 +22,20 @@ public class MaterialService : IMaterialService
         return _repositoryManager.MaterialRepository.GetMaterialById(id, trackChanges);
     }
 
-    public void CreateOneMaterial(Material material)
+    public void CreateMaterial(Material material)
     {
         if (material is null)
         {
             throw new NullReferenceException(nameof(material));
         }
         
-        _repositoryManager.MaterialRepository.CreateOneMaterial(material);
+        _repositoryManager.MaterialRepository.CreateMaterial(material);
         _repositoryManager.Save();
 
     }
     
 
-    public void UpdateOneMaterial(int id, Material material, bool trackChanges)
+    public void UpdateMaterialById(int id, Material material, bool trackChanges)
     {
         var entity = _repositoryManager.MaterialRepository.GetMaterialById(id,trackChanges);
         if (entity is null)
@@ -53,11 +53,11 @@ public class MaterialService : IMaterialService
         entity.MaterialUnit = material.MaterialUnit;
         entity.LastInTime = DateTime.UtcNow;
         
-        _repositoryManager.MaterialRepository.UpdateOneMaterial(entity);
+        _repositoryManager.MaterialRepository.UpdateMaterial(entity);
         _repositoryManager.Save();
     }
 
-    public void DeleteOneMaterial(int id, bool trackChanges)
+    public void DeleteMaterialById(int id, bool trackChanges)
     {
         var entity = _repositoryManager.MaterialRepository.GetMaterialById(id,trackChanges);
         if (entity is null)
@@ -65,7 +65,7 @@ public class MaterialService : IMaterialService
             throw new Exception($"Material with id : {id} could not found");
         }
         
-        _repositoryManager.MaterialRepository.DeleteOneMaterial(entity);
+        _repositoryManager.MaterialRepository.DeleteMaterial(entity);
         _repositoryManager.Save();
     }
 }

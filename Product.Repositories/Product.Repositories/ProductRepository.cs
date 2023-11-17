@@ -9,7 +9,7 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
     {
     }
 
-    public IQueryable<Entity.Product> GetAllProduct(bool trackChanges)
+    public IQueryable<Entity.Product> GetProduct(bool trackChanges)
     {
         return FindAll(trackChanges);
     }
@@ -19,17 +19,17 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
         return FindByCondition(b => b.ProductId.Equals(id), trackChanges).SingleOrDefault();
     }
 
-    public void CreateOneProduct(Entity.Product product)
+    public void CreateProduct(Entity.Product product)
     {
         Create(product);
     }
 
-    public void UpdateOneProduct(Entity.Product product)
+    public void UpdateProduct(Entity.Product product)
     {
         Update(product);
     }
 
-    public void DeleteOneProduct(Entity.Product product)
+    public void DeleteProduct(Entity.Product product)
     {
         Delete(product);
     }

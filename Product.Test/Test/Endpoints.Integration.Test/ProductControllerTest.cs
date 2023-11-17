@@ -67,7 +67,6 @@ public class ProductControllerTest : IClassFixture<WebApplicationFactory<IApiMar
        var jsonContent = JsonConvert.SerializeObject(product);
        var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
        
-       
        var response = await _httpClient.PostAsync("/api/Products",content);
        
        var responseContent = await response.Content.ReadAsStringAsync();

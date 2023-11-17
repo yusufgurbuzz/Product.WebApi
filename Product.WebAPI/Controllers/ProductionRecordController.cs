@@ -18,8 +18,8 @@ public class ProductionRecordController : Controller
     public IActionResult ProduceProduct(int productId, int quantity)
     {
         try
-        {
-             _serviceManager.ProductionRecordService.ProduceProduct(productId, quantity);
+        { 
+            _serviceManager.ProductionRecordService.ProduceProduct(productId, quantity);
             return Ok();
         }
         catch (Exception ex)

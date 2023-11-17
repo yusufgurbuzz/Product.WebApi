@@ -21,8 +21,8 @@ public static class ServicesExtensions
     public static void ConfigureServiceManager(this IServiceCollection services)
     {
         services.AddScoped<IServiceManager,ServiceManager>();
-        services.AddScoped<ICacheService, CacheService>();
-        services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+        //services.AddScoped<ICacheService, CacheService>();
+        //services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
         
        
     }

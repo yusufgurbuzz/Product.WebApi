@@ -11,11 +11,9 @@ public class ProductService : IProductService
         _repositoryManager = repositoryManager;
 
     }
-
-
-    public IQueryable<Entity.Product> GetAllProduct(bool trackChanges)//services
+    public IQueryable<Entity.Product> GetProduct(bool trackChanges)//services
     {
-        return _repositoryManager.ProductRepository.GetAllProduct(trackChanges);//repo
+        return _repositoryManager.ProductRepository.GetProduct(trackChanges);//repo
     }
 
     public Entity.Product GetProductById(int id, bool trackChanges)
@@ -23,7 +21,7 @@ public class ProductService : IProductService
         return _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
     }
 
-    public void CreateOneProduct(Entity.Product product)
+    public void CreateProduct(Entity.Product product)
     {
         if (product is null)
         {
@@ -33,12 +31,12 @@ public class ProductService : IProductService
         {
             throw new InvalidOperationException("Repository is not properly initialized.");
         }
-        _repositoryManager.ProductRepository.CreateOneProduct(product);
+        _repositoryManager.ProductRepository.CreateProduct(product);
         _repositoryManager.Save();
 
     }
 
-    public void UpdateOneProduct(int id,Entity.Product product, bool tranckChanges)
+    public void UpdateProductById(int id,Entity.Product product, bool tranckChanges)
     {
         var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
         if (entity is null)
@@ -55,12 +53,12 @@ public class ProductService : IProductService
         entity.ProductName = product.ProductName;
         entity.ProductStock = product.ProductStock;
         
-        _repositoryManager.ProductRepository.UpdateOneProduct(entity);
+        _repositoryManager.ProductRepository.UpdateProduct(entity);
         _repositoryManager.Save();
 
     }
 
-    public void DeleteOneProduct(int id,bool trackChanges)
+    public void DeleteProductById(int id,bool trackChanges)
     {
         var entity = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
         if (entity is null)
@@ -68,7 +66,7 @@ public class ProductService : IProductService
             throw new Exception($"Product with id : {id} could not found");
         }
         
-        _repositoryManager.ProductRepository.DeleteOneProduct(entity);
+        _repositoryManager.ProductRepository.DeleteProduct(entity);
         _repositoryManager.Save();
     }
 }

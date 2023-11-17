@@ -55,9 +55,4 @@ public class ProductionRecordControllerTest:IClassFixture<WebApplicationFactory<
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode); 
     }
-    
-    
-    //İdsi olunca üreten testi de yaz..
-    
-
 }

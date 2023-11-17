@@ -10,25 +10,20 @@ namespace ProductWebApi.Controllers;
 public class ProductController : Controller
 {
     private readonly IServiceManager _serviceManager;
-    private readonly ICacheService _cacheService;
-    private readonly ApplicationDbContext _context;
-    
-    public ProductController(IServiceManager serviceManager, ICacheService cacheService)
+    public ProductController(IServiceManager serviceManager)
     {
         _serviceManager = serviceManager;
-        _cacheService = cacheService;
     }
 
     [HttpGet]
-    public IActionResult GetAllProducts()
+    public IActionResult GetProducts()
     {
-      
-        var products = _serviceManager.ProductService.GetAllProduct(false);//service
+        var products = _serviceManager.ProductService.GetProduct(false);//service
         return Ok(products);
     }
    
     [HttpGet("{id:int}")]
-    public IActionResult GetOneProduct(int id)
+    public IActionResult GetProductById(int id)
     {
        
       var products = _serviceManager.ProductService.GetProductById(id,false);
@@ -41,7 +36,7 @@ public class ProductController : Controller
     }
     
     [HttpPost]
-    public IActionResult CreateOneProduct([FromBody] Product.Entity.Product product)
+    public IActionResult CreateProduct([FromBody] Product.Entity.Product product)
     {
        /*  if (product is null)
         {
@@ -60,7 +55,7 @@ public class ProductController : Controller
             {
                 return BadRequest();
             }
-            _serviceManager.ProductService.CreateOneProduct(product);
+            _serviceManager.ProductService.CreateProduct(product);
             return Ok(product);
         }
         catch (Exception ex)
@@ -68,11 +63,10 @@ public class ProductController : Controller
             throw new Exception(ex.Message);
         }
         
-        
     }
 
     [HttpPut ("{id:int}")]
-    public IActionResult UpdateOneProduct(int id, Product.Entity.Product product)
+    public IActionResult UpdateProductById(int id, Product.Entity.Product product)
     {
         try
         {
@@ -80,7 +74,7 @@ public class ProductController : Controller
             {
                 return BadRequest();
             }
-            _serviceManager.ProductService.UpdateOneProduct(id,product,true);
+            _serviceManager.ProductService.UpdateProductById(id,product,true);
             return NoContent();
         }
         catch (Exception ex)
@@ -90,9 +84,18 @@ public class ProductController : Controller
     }
     
     [HttpDelete ("{id:int}")]
-    public IActionResult DeleteOneProduct(int id)
+    public IActionResult DeleteProductById(int id)
     {
-       /* var exist = _serviceManager.ProductService.GetProductById(id, false);
+        try
+        {
+            _serviceManager.ProductService.DeleteProductById(id,false);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        /* var exist = _serviceManager.ProductService.GetProductById(id, false);
             //_context.Products.FirstOrDefault(x => x.ProductId.Equals(id));
         if (exist!= null)
         {
@@ -102,16 +105,5 @@ public class ProductController : Controller
         }
 
         return NotFound();*/
-        
-        
-        try
-        {
-            _serviceManager.ProductService.DeleteOneProduct(id,false);
-            return NoContent();
-        }
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
     }
 }

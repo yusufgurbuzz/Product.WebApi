@@ -15,14 +15,14 @@ public class MaterialController : Controller
     }
 
     [HttpGet]
-    public IActionResult GetAllMaterials()
+    public IActionResult GetMaterials()
     {
-        var material = _serviceManager.MaterialService.GetAllMaterial(false);
+        var material = _serviceManager.MaterialService.GetMaterial(false);
         return Ok(material);
     }
     
     [HttpGet("{id:int}")]
-    public IActionResult GetOneMaterial(int id)
+    public IActionResult GetMaterialById(int id)
     {
         var material = _serviceManager.MaterialService.GetMaterialById(id,false);
         if (material is null)
@@ -34,7 +34,7 @@ public class MaterialController : Controller
     }
     
     [HttpPost]
-    public IActionResult CreateOneMaterial(Material material)
+    public IActionResult CreateMaterial(Material material)
     {
         try
         {
@@ -42,7 +42,7 @@ public class MaterialController : Controller
             {
                 return BadRequest();
             }
-            _serviceManager.MaterialService.CreateOneMaterial(material);
+            _serviceManager.MaterialService.CreateMaterial(material);
             return StatusCode(201,material);
         }
         catch (Exception ex)
@@ -52,7 +52,7 @@ public class MaterialController : Controller
     }
     
     [HttpPut ("{id:int}")]
-    public IActionResult UpdateOneMaterial(int id, Material material)
+    public IActionResult UpdateMaterialById(int id, Material material)
     {
         try
         {
@@ -60,7 +60,7 @@ public class MaterialController : Controller
             {
                 return BadRequest();
             }
-            _serviceManager.MaterialService.UpdateOneMaterial(id,material,true);
+            _serviceManager.MaterialService.UpdateMaterialById(id,material,true);
             return NoContent();
         }
         catch (Exception ex)
@@ -69,11 +69,11 @@ public class MaterialController : Controller
         }
     }
     [HttpDelete ("{id:int}")]
-    public IActionResult DeleteOneMaterial(int id)
+    public IActionResult DeleteMaterialById(int id)
     {
         try
         {
-            _serviceManager.MaterialService.DeleteOneMaterial(id,false);
+            _serviceManager.MaterialService.DeleteMaterialById(id,false);
             return Ok();
         }
         catch (Exception ex)
