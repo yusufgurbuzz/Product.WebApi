@@ -9,11 +9,13 @@ public class ServiceManager : IServiceManager
     private readonly Lazy<IMaterialService> _materialService;
     private readonly Lazy<IProductMaterialService> _productMaterialService;
     private readonly Lazy<IProductionRecordService> _productionRecordService;
+    private readonly ILoggerService _loggerService;
     private readonly ICacheService _cacheService;
    
-    public ServiceManager( IRepositoryManager repositoryManager)
+    public ServiceManager( IRepositoryManager repositoryManager, ILoggerService loggerService, ICacheService cacheService)
     {
-        _productService = new Lazy<IProductService>(()=> new ProductService(repositoryManager));
+        _loggerService = loggerService;
+        _productService = new Lazy<IProductService>(()=> new ProductService(repositoryManager,loggerService));
         _materialService = new Lazy<IMaterialService>(()=> new MaterialService(repositoryManager));
         _productMaterialService = new Lazy<IProductMaterialService>(()=>new ProductMaterialService(repositoryManager));
         _productionRecordService = new Lazy<IProductionRecordService>(() => new ProductRecordService(repositoryManager));

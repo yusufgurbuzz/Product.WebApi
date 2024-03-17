@@ -10,4 +10,8 @@
       <ProjectReference Include="..\..\Product.Entity\Product.Entity\Product.Entity.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.3.8" />
+    </ItemGroup>
+
 </Project>

@@ -1,0 +1,30 @@
+2024-03-16 22:50:50.9534 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:50:50.9872 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:50:51.0110 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:50:51.0367 Info Configuration initialized.
+2024-03-16 22:51:26.7263 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:51:26.7522 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:51:26.7685 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:51:26.7883 Info Configuration initialized.
+2024-03-16 22:52:00.5868 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:52:00.6136 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:52:00.6309 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:52:00.6508 Info Configuration initialized.
+2024-03-16 22:52:33.8161 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:52:33.8414 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:52:33.8578 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:52:33.8783 Info Configuration initialized.
+2024-03-16 22:54:14.4319 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:54:14.4630 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:54:14.4815 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:54:14.5055 Info Configuration initialized.
+2024-03-16 22:54:55.3015 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:54:55.3272 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:54:55.3449 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:54:55.3645 Info Configuration initialized.
+2024-03-16 22:56:51.5187 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 22:56:51.5540 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 22:56:51.5796 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\yusuf.gurbuz\Desktop\ProductWebApiProject\WebAppProject\Product.WebAPI\nlog.config
+2024-03-16 22:56:51.6078 Info Configuration initialized.
+2024-03-16 23:00:04.7250 Info AppDomain Shutting down. LogFactory closing...
+2024-03-16 23:00:04.7492 Info LogFactory has been closed.

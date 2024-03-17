@@ -5,11 +5,12 @@ namespace Product.Services;
 public class ProductService : IProductService
 {
     private readonly IRepositoryManager _repositoryManager;
+    private readonly ILoggerService _loggerService;
 
-    public ProductService(IRepositoryManager repositoryManager)
+    public ProductService(IRepositoryManager repositoryManager, ILoggerService loggerService)
     {
         _repositoryManager = repositoryManager;
-
+        _loggerService = loggerService;
     }
     public IQueryable<Entity.Product> GetProduct(bool trackChanges)//services
     {
@@ -41,6 +42,7 @@ public class ProductService : IProductService
         var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
         if (entity is null)
         {
+            _loggerService.LogInfo($"Product with id : {id} could not found");
             throw new Exception($"Product with id : {id} could not found");
         }
 
@@ -63,6 +65,7 @@ public class ProductService : IProductService
         var entity = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
         if (entity is null)
         {
+            _loggerService.LogInfo($"Product with id : {id} could not found");
             throw new Exception($"Product with id : {id} could not found");
         }
         

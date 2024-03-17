@@ -1,4 +1,5 @@
 
+using NLog;
 using Product.Interfaces;
 using Product.Services;
 using ProductWebApi;
@@ -6,6 +7,7 @@ using ProductWebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(),"/nlog.config")); //nlog configrasyonu
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -15,6 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureLoggerService();
 
 var app = builder.Build();
 
