@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Product.Entity;
 using Product.Entity.Exceptions;
@@ -12,17 +14,19 @@ namespace ProductWebApi.Controllers;
 public class ProductController : Controller
 {
     private readonly IServiceManager _serviceManager;
+    private readonly IMapper _mapper;
 
-    public ProductController(IServiceManager serviceManager)
+    public ProductController(IServiceManager serviceManager, IMapper mapper)
     {
         _serviceManager = serviceManager;
+        _mapper = mapper;
     }
 
-    [HttpGet]
-    public IActionResult GetProducts()
+    [HttpGet("getProducts")]
+    public async Task<ActionResult> GetProducts()
     {
-        var products = _serviceManager.ProductService.GetProduct(false); //service
-        return Ok(products);
+        var product =  await _serviceManager.ProductService.GetProduct(false);
+        return Ok(_mapper.Map<IEnumerable<ProductDto>>(product));
     }
 
     [HttpGet("{id:int}")]
@@ -56,7 +60,7 @@ public class ProductController : Controller
     }
 
     [HttpPut("{id:int}")]
-    public IActionResult UpdateProductById(int id, ProductDto product)
+    public IActionResult UpdateProductById(int id, UpdateProductDto product)
     {
         if (product is null)
         {

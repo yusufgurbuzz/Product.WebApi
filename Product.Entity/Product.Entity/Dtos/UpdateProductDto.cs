@@ -1,6 +1,7 @@
 ﻿namespace Product.Entity;
 
-public record ProductDto
+
+public record UpdateProductDto
 {
     public int ProductId { get; init; }
     public string ProductName { get; init; }

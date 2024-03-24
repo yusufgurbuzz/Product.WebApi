@@ -25,7 +25,7 @@ public class DraftProduceProductController : Controller
     {
        
         //Ürün üretim talebi verilerini productionData'ya doldurdum.ProductMaterialMap,ProductionMaterial ile map edildi.
-        var productionData = new ProductMaterialMap
+        var productionData = new ProductMaterialDto
         {
             ProductId = productId,
             Quantity = quantity
@@ -33,7 +33,7 @@ public class DraftProduceProductController : Controller
         
         // Taslak halinde olan verileri redisde 10 dakika tut
         var expiryTime = DateTimeOffset.Now.AddMinutes(10);
-      var result =   _cacheService.SetData<ProductMaterialMap>($"product{productId}", productionData, expiryTime);
+      var result =   _cacheService.SetData<ProductMaterialDto>($"product{productId}", productionData, expiryTime);
       return Ok();
         
     }
@@ -50,7 +50,7 @@ public class DraftProduceProductController : Controller
             {
                 
                 // JSON verisini ProductMaterialMap nesnesine dönüştürülür
-                var productionRequest = _cacheService.GetData<ProductMaterialMap>(key);
+                var productionRequest = _cacheService.GetData<ProductMaterialDto>(key);
 
                 // Ürün üretim aşaması
                 _serviceManager.ProductionRecordService.ProduceProduct(productionRequest.ProductId,

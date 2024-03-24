@@ -9,7 +9,7 @@ public class MaterialRepository: RepositoryBase<Material>, IMaterialRepository
     {
     }
 
-    public IQueryable<Material> GetMaterial(bool trackChanges)
+    public IEnumerable<Material> GetMaterial(bool trackChanges)
     {
         return FindAll(trackChanges);
     }

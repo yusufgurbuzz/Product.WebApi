@@ -12,7 +12,7 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
         _context = context;
     }
 
-    public IQueryable<Entity.Product> GetProduct(bool trackChanges)
+    public IEnumerable<Entity.Product> GetProduct(bool trackChanges)
     {
         return FindAll(trackChanges);
     }

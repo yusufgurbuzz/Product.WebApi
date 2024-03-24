@@ -14,7 +14,7 @@ public class RepositoryBase <T> : IRepositoryBase<T> where T: class
     }
         
     
-    public IQueryable<T> FindAll(bool trackChanges)
+    public IEnumerable<T> FindAll(bool trackChanges)
     {
         return !trackChanges ? _context.Set<T>().AsNoTracking() : _context.Set<T>();
     }

@@ -5,7 +5,7 @@ namespace Product.Interfaces;
 
 public interface IProductRepository : IRepositoryBase<Entity.Product>
 {
-    IQueryable<Entity.Product> GetProduct(bool trackChanges);
+    IEnumerable<Entity.Product> GetProduct(bool trackChanges);
     Entity.Product GetProductById(int id, bool trackChanges);
     void CreateProduct(Entity.Product product);
     void UpdateProduct(Entity.Product product);

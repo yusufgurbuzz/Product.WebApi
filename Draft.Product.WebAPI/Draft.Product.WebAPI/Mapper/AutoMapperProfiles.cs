@@ -9,7 +9,7 @@ public class AutoMapperProfiles : Profile
     {
         var conf = new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<ProductMaterial, ProductMaterialMap>()
+            cfg.CreateMap<ProductMaterial, ProductMaterialDto>()
                 .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
                 .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity));
         });

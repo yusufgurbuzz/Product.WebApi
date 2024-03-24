@@ -82,9 +82,9 @@ public class CacheService : ICacheService
         return keys;
     }
 
-    public List<ProductMaterialMap> GetAllRedisData()
+    public List<ProductMaterialDto> GetAllRedisData()
     {
-        List<ProductMaterialMap> productMaterialMap = new List<ProductMaterialMap>();
+        List<ProductMaterialDto> productMaterialMap = new List<ProductMaterialDto>();
         IDatabase redisDb = _connectionMultiplexer.GetDatabase();
         //Redis sunucusunun bir veya daha fazla uç noktasını alır ve ardından bunların ilkini seçer.
         var keys = redisDb.Multiplexer.GetServer(_connectionMultiplexer.GetEndPoints().First()).Keys();
@@ -93,17 +93,17 @@ public class CacheService : ICacheService
         foreach (var key in keys)
         {
             var keyValue = redisDb.StringGet(key);
-            var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(keyValue);
+            var productMaterial = JsonConvert.DeserializeObject<ProductMaterialDto>(keyValue);
             productMaterialMap.Add(productMaterial);
         }
 
         return productMaterialMap;
     }
-    public ProductMaterialMap GetRedisData(string key)
+    public ProductMaterialDto GetRedisData(string key)
     {
         IDatabase redisDb = _connectionMultiplexer.GetDatabase();
         var redisData = redisDb.StringGet(key);
-        var productMaterial = JsonConvert.DeserializeObject<ProductMaterialMap>(redisData);
+        var productMaterial = JsonConvert.DeserializeObject<ProductMaterialDto>(redisData);
         
 
         if (productMaterial is null)

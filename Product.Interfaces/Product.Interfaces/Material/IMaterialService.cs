@@ -4,7 +4,7 @@ namespace Product.Interfaces;
 
 public interface IMaterialService
 {
-    IQueryable<Material> GetMaterial(bool trackChanges);
+    IEnumerable<Material> GetMaterial(bool trackChanges);
     Material GetMaterialById(int id,bool trackChanges);
     void CreateMaterial(Material material);
     void UpdateMaterialById(int id,Material material,bool trackChanges);

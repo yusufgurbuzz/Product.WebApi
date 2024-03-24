@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Product.Entity;
 using Product.Entity.Exceptions;
 using Product.Interfaces;
@@ -16,9 +17,10 @@ public class ProductService : IProductService
         _loggerService = loggerService;
         _mapper = mapper;
     }
-    public IQueryable<Entity.Product> GetProduct(bool trackChanges)//services
+    public async Task<IEnumerable<Entity.Product>> GetProduct(bool trackChanges)
     {
-        return _repositoryManager.ProductRepository.GetProduct(trackChanges);//repo
+        var productsQuery = _repositoryManager.ProductRepository.GetProduct(trackChanges);
+        return productsQuery;
     }
 
     public Entity.Product GetProductById(int id, bool trackChanges)
@@ -47,7 +49,7 @@ public class ProductService : IProductService
 
     }
 
-    public void UpdateProductById(int id,ProductDto product, bool tranckChanges)
+    public void UpdateProductById(int id,UpdateProductDto product, bool tranckChanges)
     {
         var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
         if (entity is null)

@@ -9,8 +9,8 @@ public interface ICacheService
     bool SetData<T>(string key, T value, DateTimeOffset expirationTime);
     object RemoveData(String key);
     IEnumerable<string> GetAllKeysTitle(string title);
-    List<ProductMaterialMap> GetAllRedisData();
-    ProductMaterialMap GetRedisData(string key);
+    List<ProductMaterialDto> GetAllRedisData();
+    ProductMaterialDto GetRedisData(string key);
 
     
 }
