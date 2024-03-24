@@ -1,12 +1,15 @@
-﻿using Product.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Product.Entity;
 using Product.Interfaces;
 
 namespace Product.Repositories;
 
 public class ProductRepository : RepositoryBase<Entity.Product>, IProductRepository
 {
+    private readonly ApplicationDbContext _context;
     public ProductRepository(ApplicationDbContext context) : base(context)
     {
+        _context = context;
     }
 
     public IQueryable<Entity.Product> GetProduct(bool trackChanges)
@@ -26,7 +29,12 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
 
     public void UpdateProduct(Entity.Product product)
     {
-        Update(product);
+        var existingProduct = _context.Products.Find(product.ProductId);
+        if (existingProduct != null)
+        {
+            _context.Entry(existingProduct).CurrentValues.SetValues(product);
+            _context.SaveChanges();
+        }
     }
 
     public void DeleteProduct(Entity.Product product)

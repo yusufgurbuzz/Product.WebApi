@@ -1,4 +1,7 @@
-﻿using Product.Interfaces;
+﻿using AutoMapper;
+using Product.Entity;
+using Product.Entity.Exceptions;
+using Product.Interfaces;
 
 namespace Product.Services;
 
@@ -6,11 +9,12 @@ public class ProductService : IProductService
 {
     private readonly IRepositoryManager _repositoryManager;
     private readonly ILoggerService _loggerService;
-
-    public ProductService(IRepositoryManager repositoryManager, ILoggerService loggerService)
+    private readonly IMapper _mapper;
+    public ProductService(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper)
     {
         _repositoryManager = repositoryManager;
         _loggerService = loggerService;
+        _mapper = mapper;
     }
     public IQueryable<Entity.Product> GetProduct(bool trackChanges)//services
     {
@@ -19,7 +23,13 @@ public class ProductService : IProductService
 
     public Entity.Product GetProductById(int id, bool trackChanges)
     {
-        return _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
+        var product = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
+        if (product is null)
+        {
+            throw new ProductNotFoundException(id);
+        }
+
+        return product;
     }
 
     public void CreateProduct(Entity.Product product)
@@ -37,13 +47,12 @@ public class ProductService : IProductService
 
     }
 
-    public void UpdateProductById(int id,Entity.Product product, bool tranckChanges)
+    public void UpdateProductById(int id,ProductDto product, bool tranckChanges)
     {
         var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
         if (entity is null)
         {
-            _loggerService.LogInfo($"Product with id : {id} could not found");
-            throw new Exception($"Product with id : {id} could not found");
+            throw new ProductNotFoundException(id);
         }
 
         if (product is null)
@@ -51,9 +60,7 @@ public class ProductService : IProductService
             throw new ArgumentNullException();
         }
 
-        entity.ProductId = product.ProductId;
-        entity.ProductName = product.ProductName;
-        entity.ProductStock = product.ProductStock;
+        entity = _mapper.Map<Entity.Product>(product);
         
         _repositoryManager.ProductRepository.UpdateProduct(entity);
         _repositoryManager.Save();
@@ -65,10 +72,8 @@ public class ProductService : IProductService
         var entity = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
         if (entity is null)
         {
-            _loggerService.LogInfo($"Product with id : {id} could not found");
-            throw new Exception($"Product with id : {id} could not found");
+            throw new ProductNotFoundException(id);
         }
-        
         _repositoryManager.ProductRepository.DeleteProduct(entity);
         _repositoryManager.Save();
     }
