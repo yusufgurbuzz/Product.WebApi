@@ -5,11 +5,11 @@ namespace Product.Interfaces;
 
 public interface IProductRepository : IRepositoryBase<Entity.Product>
 {
-    IEnumerable<Entity.Product> GetProduct(bool trackChanges);
-    Entity.Product GetProductById(int id, bool trackChanges);
-    void CreateProduct(Entity.Product product);
-    void UpdateProduct(Entity.Product product);
-    void DeleteProduct(Entity.Product product);
+    Task<IEnumerable<Entity.Product>> GetProduct(bool trackChanges);
+    Task<Entity.Product> GetProductById(int id, bool trackChanges);
+    Task CreateProduct(Entity.Product product);
+    Task UpdateProduct(Entity.Product product);
+    Task DeleteProduct(Entity.Product product);
     List<ProductMaterial> GetProductMaterialByProductId(int productId);
 
 }

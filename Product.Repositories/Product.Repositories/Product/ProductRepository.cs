@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Collections;
+using System.Collections.Immutable;
+using Microsoft.EntityFrameworkCore;
 using Product.Entity;
 using Product.Interfaces;
 
@@ -12,22 +14,22 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
         _context = context;
     }
 
-    public IEnumerable<Entity.Product> GetProduct(bool trackChanges)
+    public async Task<IEnumerable<Entity.Product>>GetProduct(bool trackChanges)
     {
-        return FindAll(trackChanges);
+        return FindAll(trackChanges).OrderBy(b=>b.ProductId);
     }
 
-    public Entity.Product GetProductById(int id, bool trackChanges)
+    public async Task<Entity.Product>  GetProductById(int id, bool trackChanges)
     {
         return FindByCondition(b => b.ProductId.Equals(id), trackChanges).SingleOrDefault();
     }
 
-    public void CreateProduct(Entity.Product product)
+    public async Task CreateProduct(Entity.Product product)
     {
         Create(product);
     }
 
-    public void UpdateProduct(Entity.Product product)
+    public async Task UpdateProduct(Entity.Product product)
     {
         var existingProduct = _context.Products.Find(product.ProductId);
         if (existingProduct != null)
@@ -37,7 +39,7 @@ public class ProductRepository : RepositoryBase<Entity.Product>, IProductReposit
         }
     }
 
-    public void DeleteProduct(Entity.Product product)
+    public async Task DeleteProduct(Entity.Product product)
     {
         Delete(product);
     }

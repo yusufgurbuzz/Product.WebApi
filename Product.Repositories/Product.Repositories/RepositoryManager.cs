@@ -25,8 +25,8 @@ public class RepositoryManager : IRepositoryManager
     public IProductMaterialRepository ProductMaterialRepository => _productMaterialRepository.Value;
     public IProductionRecordRepository ProductionRecordRepository => _productionRecordRepository.Value;
 
-    public void Save()
+    public async Task Save()
     {
-        _context.SaveChanges();
+         _context.SaveChanges();
     }
 }

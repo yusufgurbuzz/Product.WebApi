@@ -1,8 +1,10 @@
 
+using Microsoft.AspNetCore.Mvc;
 using NLog;
 using Product.Interfaces;
 using Product.Services;
 using ProductWebApi;
+using ProductWebApi.ActionFilters;
 using ProductWebApi.Extensions;
 using ProductWebApi.Mapper;
 
@@ -17,8 +19,12 @@ builder.Services.AddControllers(config => //içerik pazarlığı (xml/csv/json)
     config.ReturnHttpNotAcceptable = true;
 }).AddXmlDataContractSerializerFormatters();// veriyi sadece json formatında değil xml formatında da alabiliriz.
 
+builder.Services.Configure<ApiBehaviorOptions>(opt =>
+{
+    opt.SuppressModelStateInvalidFilter = true;
+}); //404 dönmesini sağlıyoruz.Dtolarda 2den büyük 10000 den küçük gibi ifadelerin doğru olmadığı durumda döner ve kayıt işlemini yapmaz (Product controller createProduct)
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.ConfigureActionFilters();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigurePostgreSqlContext(builder.Configuration);

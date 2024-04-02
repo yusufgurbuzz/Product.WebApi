@@ -4,11 +4,11 @@ namespace Product.Interfaces;
 
 public interface IProductService
 {
-      Task<IEnumerable<Entity.Product>> GetProduct(bool trackChanges);
-      Entity.Product GetProductById(int id,bool trackChanges);
-      void CreateProduct(Entity.Product product);
-      void UpdateProductById(int id,UpdateProductDto product,bool trackChanges);
-      void DeleteProductById(int id,bool trackChanges);
+      Task<IEnumerable<ProductDto>> GetProduct(bool trackChanges);
+      Task<ProductDto> GetProductById(int id,bool trackChanges);
+      Task<ProductDto> CreateProduct(ProductInsertionDto product);
+      Task UpdateProductById(int id,UpdateProductDto product,bool trackChanges);
+      Task DeleteProductById(int id,bool trackChanges);
       
 
 }

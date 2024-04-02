@@ -1,9 +1,11 @@
-﻿namespace Product.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Product.Entity;
 
 
-public record UpdateProductDto
+public record UpdateProductDto : ProductManipulationDto
 {
+    [Required]
     public int ProductId { get; init; }
-    public string ProductName { get; init; }
-    public int ProductStock { get; init; }
+   
 }
