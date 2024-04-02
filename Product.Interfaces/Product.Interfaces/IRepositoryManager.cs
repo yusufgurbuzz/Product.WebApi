@@ -8,5 +8,5 @@ public interface IRepositoryManager
     IMaterialRepository MaterialRepository { get; }
     IProductMaterialRepository ProductMaterialRepository { get; }
     IProductionRecordRepository ProductionRecordRepository  { get; }
-    void Save();
+    Task Save();
 }

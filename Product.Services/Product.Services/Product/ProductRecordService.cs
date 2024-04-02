@@ -21,11 +21,11 @@ public class ProductRecordService : IProductionRecordService
         
     }
     
-    public void ProduceProduct(int productId, int quantity) //üretim kısmı
+    public async Task ProduceProduct(int productId, int quantity) //üretim kısmı
     { 
         
         bool trackChanges = false;
-        var product = _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
+        var product = await _repositoryManager.ProductRepository.GetProductById(productId, trackChanges);
     
         if (product is null)
         {

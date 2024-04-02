@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using Product.Entity;
 using Product.Entity.Exceptions;
 using Product.Interfaces;
@@ -17,66 +16,52 @@ public class ProductService : IProductService
         _loggerService = loggerService;
         _mapper = mapper;
     }
-    public async Task<IEnumerable<Entity.Product>> GetProduct(bool trackChanges)
-    {
-        var productsQuery = _repositoryManager.ProductRepository.GetProduct(trackChanges);
-        return productsQuery;
-    }
 
-    public Entity.Product GetProductById(int id, bool trackChanges)
+    private async Task<Entity.Product> GetProductByIdCheckExists(int id, bool trackChanges)
     {
-        var product = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
+        var product = await _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
         if (product is null)
-        {
             throw new ProductNotFoundException(id);
-        }
-
+        
         return product;
     }
 
-    public void CreateProduct(Entity.Product product)
+    public async Task<IEnumerable<ProductDto>> GetProduct(bool trackChanges)
     {
-        if (product is null)
-        {
-            throw new NullReferenceException();
-        }
-        if (_repositoryManager is null || _repositoryManager.ProductRepository is null)
-        {
-            throw new InvalidOperationException("Repository is not properly initialized.");
-        }
-        _repositoryManager.ProductRepository.CreateProduct(product);
-        _repositoryManager.Save();
+        var productsQuery = await _repositoryManager.ProductRepository.GetProduct(trackChanges);
+        return  _mapper.Map<IEnumerable<ProductDto>>(productsQuery);
+    }
+
+    public async Task<ProductDto> GetProductById(int id, bool trackChanges)
+    {
+        var product = await GetProductByIdCheckExists(id,trackChanges);
+        return  _mapper.Map<ProductDto>(product);
+    }
+    public async Task<ProductDto> CreateProduct(ProductInsertionDto product)
+    {
+        var entity = _mapper.Map<Entity.Product>(product);
+        
+        await _repositoryManager.ProductRepository.CreateProduct(entity);
+        await _repositoryManager.Save();
+        
+        return _mapper.Map<ProductDto>(entity);
 
     }
 
-    public void UpdateProductById(int id,UpdateProductDto product, bool tranckChanges)
+    public async Task UpdateProductById(int id,UpdateProductDto product, bool trackChanges)
     {
-        var entity = _repositoryManager.ProductRepository.GetProductById(id, tranckChanges);
-        if (entity is null)
-        {
-            throw new ProductNotFoundException(id);
-        }
-
-        if (product is null)
-        {
-            throw new ArgumentNullException();
-        }
-
+        var entity = await GetProductByIdCheckExists(id,trackChanges);;
         entity = _mapper.Map<Entity.Product>(product);
         
-        _repositoryManager.ProductRepository.UpdateProduct(entity);
-        _repositoryManager.Save();
+        await _repositoryManager.ProductRepository.UpdateProduct(entity);
+        await _repositoryManager.Save();
 
     }
 
-    public void DeleteProductById(int id,bool trackChanges)
+    public async Task DeleteProductById(int id,bool trackChanges)
     {
-        var entity = _repositoryManager.ProductRepository.GetProductById(id, trackChanges);
-        if (entity is null)
-        {
-            throw new ProductNotFoundException(id);
-        }
-        _repositoryManager.ProductRepository.DeleteProduct(entity);
-        _repositoryManager.Save();
+        var entity = await GetProductByIdCheckExists(id,trackChanges);
+        await _repositoryManager.ProductRepository.DeleteProduct(entity);
+        await _repositoryManager.Save();
     }
 }

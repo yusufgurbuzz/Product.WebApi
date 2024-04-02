@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Product.Entity.LogModel;
 using Product.Interfaces;
 using Product.Repositories;
 using Product.Services;
+using ProductWebApi.ActionFilters;
 using StackExchange.Redis;
 
 namespace ProductWebApi.Extensions;
@@ -29,8 +31,11 @@ public static class ServicesExtensions
     {
         services.AddSingleton<ILoggerService, LoggerManager>();
     }
-
-
+    public static void ConfigureActionFilters(this IServiceCollection services)
+    {
+        services.AddScoped<ValidationFilterAttribute>();
+        services.AddSingleton<LogFilterAttribute>();
+    }
 
 
 }
