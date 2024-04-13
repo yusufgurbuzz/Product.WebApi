@@ -31,6 +31,7 @@ builder.Services.ConfigurePostgreSqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureCors();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
@@ -58,6 +59,8 @@ if (app.Environment.IsProduction())
         });
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

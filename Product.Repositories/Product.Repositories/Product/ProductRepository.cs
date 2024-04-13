@@ -2,24 +2,33 @@
 using System.Collections.Immutable;
 using Microsoft.EntityFrameworkCore;
 using Product.Entity;
+using Product.Entity.RequestFeatures;
 using Product.Interfaces;
+using Product.Repositories.Extensions;
 
 namespace Product.Repositories;
 
-public class ProductRepository : RepositoryBase<Entity.Product>, IProductRepository
+public sealed class ProductRepository : RepositoryBase<Entity.Product>, IProductRepository
 {
     private readonly ApplicationDbContext _context;
+
     public ProductRepository(ApplicationDbContext context) : base(context)
     {
         _context = context;
     }
 
-    public async Task<IEnumerable<Entity.Product>>GetProduct(bool trackChanges)
+    public async Task<PagedList<Entity.Product>> GetProduct(ProductParameters productParameters, bool trackChanges)
     {
-        return FindAll(trackChanges).OrderBy(b=>b.ProductId);
+        var products = FindAll(trackChanges)
+            .FilterProducts(productParameters.MinStock,productParameters.MaxStock)
+            .SearchProducts(productParameters.SearchTerm)
+            .OrderBy(b => b.ProductId);
+        return PagedList<Entity.Product>.ToPagedList(products,
+            productParameters.PageNumber,
+            productParameters.Pagesize);
     }
 
-    public async Task<Entity.Product>  GetProductById(int id, bool trackChanges)
+    public async Task<Entity.Product> GetProductById(int id, bool trackChanges)
     {
         return FindByCondition(b => b.ProductId.Equals(id), trackChanges).SingleOrDefault();
     }
