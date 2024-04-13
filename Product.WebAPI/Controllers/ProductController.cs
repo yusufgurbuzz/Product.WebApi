@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Product.Entity;
 using Product.Entity.LogModel;
+using Product.Entity.RequestFeatures;
 using Product.Interfaces;
 using ProductWebApi.ActionFilters;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace ProductWebApi.Controllers;
 
@@ -21,11 +24,12 @@ public class ProductController : Controller
         _mapper = mapper;
     }
 
-    [HttpGet("getAll")]
-    public async Task<ActionResult> GetProducts()
+    [HttpGet("AllProduct")]
+    public async Task<ActionResult> GetProducts([FromQuery]ProductParameters productParameters)
     {
-        var product =  await _serviceManager.ProductService.GetProduct(false);
-        return Ok(product);
+        var pagedResult =  await _serviceManager.ProductService.GetProduct(productParameters,false);
+        Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+        return Ok(pagedResult.Item1);
     }
 
     [HttpGet("{id:int}")]

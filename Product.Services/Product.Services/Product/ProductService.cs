@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Product.Entity;
 using Product.Entity.Exceptions;
+using Product.Entity.RequestFeatures;
 using Product.Interfaces;
 
 namespace Product.Services;
@@ -26,10 +27,14 @@ public class ProductService : IProductService
         return product;
     }
 
-    public async Task<IEnumerable<ProductDto>> GetProduct(bool trackChanges)
+    public async Task<(IEnumerable<ProductDto>,MetaData metaData)> GetProduct(ProductParameters productParameters ,bool trackChanges)
     {
-        var productsQuery = await _repositoryManager.ProductRepository.GetProduct(trackChanges);
-        return  _mapper.Map<IEnumerable<ProductDto>>(productsQuery);
+        if (!productParameters.ValidStockRange)
+            throw new StockOutOfRangeBadRequestException();
+            
+        var productsQuery = await _repositoryManager.ProductRepository.GetProduct(productParameters,trackChanges); 
+        var productDtos = _mapper.Map<IEnumerable<ProductDto>>(productsQuery);
+        return (productDtos,productsQuery.MetaData);
     }
 
     public async Task<ProductDto> GetProductById(int id, bool trackChanges)
