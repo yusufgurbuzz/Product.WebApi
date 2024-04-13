@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Dynamic;
+using AutoMapper;
 using Product.Entity;
 using Product.Entity.Exceptions;
 using Product.Entity.RequestFeatures;
@@ -11,11 +12,13 @@ public class ProductService : IProductService
     private readonly IRepositoryManager _repositoryManager;
     private readonly ILoggerService _loggerService;
     private readonly IMapper _mapper;
-    public ProductService(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper)
+    private readonly IDataShapper<ProductDto> _shaper;
+    public ProductService(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper, IDataShapper<ProductDto> shaper)
     {
         _repositoryManager = repositoryManager;
         _loggerService = loggerService;
         _mapper = mapper;
+        _shaper = shaper;
     }
 
     private async Task<Entity.Product> GetProductByIdCheckExists(int id, bool trackChanges)
@@ -27,14 +30,16 @@ public class ProductService : IProductService
         return product;
     }
 
-    public async Task<(IEnumerable<ProductDto>,MetaData metaData)> GetProduct(ProductParameters productParameters ,bool trackChanges)
+    public async Task<(IEnumerable<ExpandoObject>,MetaData metaData)> GetProduct(ProductParameters productParameters ,bool trackChanges)
     {
         if (!productParameters.ValidStockRange)
             throw new StockOutOfRangeBadRequestException();
             
         var productsQuery = await _repositoryManager.ProductRepository.GetProduct(productParameters,trackChanges); 
         var productDtos = _mapper.Map<IEnumerable<ProductDto>>(productsQuery);
-        return (productDtos,productsQuery.MetaData);
+        
+        var shapedData = _shaper.ShapeData(productDtos, productParameters.Fields);
+        return (shapedData,productsQuery.MetaData);
     }
 
     public async Task<ProductDto> GetProductById(int id, bool trackChanges)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Product.Entity;
 using Product.Entity.LogModel;
 using Product.Interfaces;
 using Product.Repositories;
@@ -47,6 +48,10 @@ public static class ServicesExtensions
                 .AllowAnyHeader()
                 .WithExposedHeaders("X-Pagination"));
         });
+    }
+    public static void ConfigureDataShaper(this IServiceCollection services)
+    {
+        services.AddScoped<IDataShapper<ProductDto>, DataShaper<ProductDto>>();
     }
 
 }

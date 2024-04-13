@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Product.Entity;
 using Product.Interfaces;
 using Product.Repositories;
 
@@ -10,9 +11,10 @@ public class ServiceManager : IServiceManager
     private readonly Lazy<IMaterialService> _materialService;
     private readonly Lazy<IProductMaterialService> _productMaterialService;
     private readonly Lazy<IProductionRecordService> _productionRecordService;
-    public ServiceManager( IRepositoryManager repositoryManager, ILoggerService loggerService, ICacheService cacheService, IMapper mapper)
+    public ServiceManager( IRepositoryManager repositoryManager, ILoggerService loggerService, ICacheService cacheService, IMapper mapper, 
+        IDataShapper<ProductDto> dataShaper)
     {
-        _productService = new Lazy<IProductService>(()=> new ProductService(repositoryManager,loggerService,mapper));
+        _productService = new Lazy<IProductService>(()=> new ProductService(repositoryManager,loggerService,mapper,dataShaper));
         _materialService = new Lazy<IMaterialService>(()=> new MaterialService(repositoryManager));
         _productMaterialService = new Lazy<IProductMaterialService>(()=>new ProductMaterialService(repositoryManager));
         _productionRecordService = new Lazy<IProductionRecordService>(() => new ProductRecordService(repositoryManager));

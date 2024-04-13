@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Immutable;
-using Microsoft.EntityFrameworkCore;
+﻿
 using Product.Entity;
 using Product.Entity.RequestFeatures;
 using Product.Interfaces;
@@ -19,13 +17,16 @@ public sealed class ProductRepository : RepositoryBase<Entity.Product>, IProduct
 
     public async Task<PagedList<Entity.Product>> GetProduct(ProductParameters productParameters, bool trackChanges)
     {
-        var products = FindAll(trackChanges)
-            .FilterProducts(productParameters.MinStock,productParameters.MaxStock)
-            .SearchProducts(productParameters.SearchTerm)
-            .OrderBy(b => b.ProductId);
-        return PagedList<Entity.Product>.ToPagedList(products,
-            productParameters.PageNumber,
-            productParameters.Pagesize);
+        
+            var products = FindAll(trackChanges)
+                .FilterProducts(productParameters.MinStock, productParameters.MaxStock)
+                .SearchProducts(productParameters.SearchTerm)
+                .SortProducts(productParameters.OrderBy);
+        
+            return PagedList<Entity.Product>.ToPagedList(products,
+                productParameters.PageNumber,
+                productParameters.Pagesize);
+        
     }
 
     public async Task<Entity.Product> GetProductById(int id, bool trackChanges)

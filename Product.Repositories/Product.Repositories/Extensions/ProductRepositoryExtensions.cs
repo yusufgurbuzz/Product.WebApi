@@ -1,4 +1,7 @@
-﻿namespace Product.Repositories.Extensions;
+﻿using System.Reflection;
+using System.Text;
+using System.Linq.Dynamic.Core;
+namespace Product.Repositories.Extensions;
 
 public static class ProductRepositoryExtensions
 {
@@ -7,7 +10,7 @@ public static class ProductRepositoryExtensions
         (p.ProductStock >= minStock) &&
         (p.ProductStock < maxStock));
 
-    public static IQueryable<Entity.Product> SearchProducts(this IQueryable<Entity.Product> products, string searchTerm)
+    public static IQueryable<Entity.Product> SearchProducts(this IQueryable<Entity.Product> products, string? searchTerm)
     {
         if (string.IsNullOrWhiteSpace(searchTerm))
         {
@@ -20,4 +23,16 @@ public static class ProductRepositoryExtensions
                 .Contains(searchTerm));
     }
 
+    public static IQueryable<Entity.Product> SortProducts(this IQueryable<Entity.Product> products, string? orderByQueryString )
+    {
+        if (string.IsNullOrWhiteSpace(orderByQueryString))
+            return products.OrderBy(p => p.ProductId);
+
+        var orderQuery = OrderQueryBuilder.CreateOrderQuery<Entity.Product>(orderByQueryString);
+        
+        if (orderQuery is null)
+            return products.OrderBy(p => p.ProductId);
+
+        return products.OrderBy(orderQuery);
+    }
 }

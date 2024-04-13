@@ -9,4 +9,9 @@ public class ProductParameters : RequestParam
     public bool ValidStockRange => MaxStock > MinStock;
 
     public String? SearchTerm { get; set; }
+
+    public ProductParameters()
+    {
+        OrderBy = "ProductName";
+    }
 }
